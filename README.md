@@ -1,51 +1,64 @@
 # Shaivya Shashwat — Portfolio
 
-This is the **exact** site rendered in the Design Preview — the real HTML pages,
-animations, images, GIFs, and videos. Nothing has been reconstructed or
-simplified.
+The exact site rendered in the Design Preview — the real HTML pages, animations,
+images, GIFs, and videos. Nothing is reconstructed or simplified.
 
 ## Run locally
 
 ```bash
 npm install      # installs nothing — there are zero dependencies
-npm run dev      # starts a local server
+npm run dev      # starts a local static server
 ```
 
-Then open **http://localhost:3000**.
+Open **http://localhost:3000**.
 
-That's it. No build step, no framework, no config.
+`server.js` is a tiny zero-dependency Node static server used **only** for local
+development. It is not used in deployment.
+
+## Deploy to Vercel
+
+This is a **pure static site** — it targets Vercel's static file hosting (CDN).
+There is **no Node server and no serverless function** in production; Vercel just
+serves the files directly. `server.js` is ignored on Vercel.
+
+`vercel.json` pins this behaviour:
+
+```json
+{
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "cleanUrls": false,
+  "rewrites": [{ "source": "/", "destination": "/index.html" }]
+}
+```
+
+- `framework: null` + `buildCommand: null` → Vercel runs no build and does not
+  try to boot `server.js` (that was the cause of the earlier 404s).
+- `outputDirectory: "."` → the project root is published as-is.
+- The rewrite maps `/` to `index.html`, which redirects to the home page.
+
+### Steps
+1. Push this folder to a GitHub repo.
+2. Import it in Vercel. When asked, **Framework Preset: Other** (vercel.json
+   already sets everything).
+3. Deploy. No build step runs; every page, asset, GIF, and MP4 is served from
+   the CDN.
 
 ## What's inside
 
 | File | Purpose |
 |------|---------|
-| `Shaivya Portfolio - Home.dc.html` | Home page (entry point) |
-| `About - Shaivya Shashwat.dc.html` | About page |
-| `HealOS - Case Study.dc.html` | Case study |
-| `LegalClerk - Case Study.dc.html` | Case study |
-| `OpenMic - Case Study.dc.html` | Case study |
-| `SalesRoleplay - Case Study.dc.html` | Case study |
-| `Arnifi Motion - Case Study.dc.html` | Case study |
-| `Arnifi Design System - Case Study.dc.html` | Case study |
-| `support.js` | Rendering runtime (loads the pages) |
+| `index.html` | Entry — redirects to the home page |
+| `Shaivya Portfolio - Home.dc.html` | Home |
+| `About - Shaivya Shashwat.dc.html` | About |
+| `HealOS / LegalClerk / OpenMic / SalesRoleplay / Arnifi … .dc.html` | Case studies |
+| `support.js` | Rendering runtime |
 | `ui-motion.js` | Scroll reveals, hover motion, count-ups |
 | `dotted-surface.js` | Animated hero background |
-| `assets/` | All images, GIFs, videos, and the resume PDF |
-| `server.js` | Tiny zero-dependency static server |
+| `responsive.css` | Responsive layer (desktop unchanged; mobile/tablet rules) |
+| `assets/` | All images, GIFs, videos, resume PDF |
+| `server.js` | Local dev server only (not used on Vercel) |
 
-## Internet needed for two things
-
-The pages load fonts from Google Fonts and the 3D library (three.js) from a CDN.
-Both are standard public CDNs — just keep the machine online the first time.
-
-## Deploy
-
-Any static host works (Vercel, Netlify, GitHub Pages, S3). For **Vercel**:
-
-1. Push this folder to a GitHub repo.
-2. Import it in Vercel as a project.
-3. Framework preset: **Other**. Build command: *(leave empty)*.
-   Output directory: **`.`** (the repo root).
-4. Deploy. Vercel serves the files as-is.
-
-The home page is served at `/` automatically.
+Fonts (Google Fonts) and the 3D library (three.js) load from public CDNs, so keep
+the machine online.
