@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F2F0EA;color:#141414;font-family:'Archivo',sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.7}
+::selection{background:#B4451F;color:#F2F0EA}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+</style>
+<link rel="stylesheet" href="./responsive.css">
+<script src="./ui-motion.js"></script>
+</helmet>
+
+<div data-screen-label="About" class="r-page" style="min-width:1100px">
+
+<!-- ===== Top strip ===== -->
+<div style="position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #141414;background:#F2F0EA">
+  <a href="Shaivya Portfolio - Home.dc.html">← Shaivya Shashwat</a>
+  <div style="display:flex;gap:24px;align-items:center">
+    <a href="Shaivya Portfolio - Home.dc.html">Work</a>
+    <span style="color:{{ accent }}">About</span>
+    <a href="assets/resume.pdf" download="Shaivya-Shashwat-Resume.pdf" style="background:#141414;color:#F2F0EA;padding:8px 14px">Resume ↓</a>
+  </div>
+</div>
+
+<!-- ===== 1 · Hero ===== -->
+<div style="padding:110px 40px 90px;border-bottom:1px solid #141414">
+  <div style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:{{ accent }};margin-bottom:32px;animation:riseIn .6s cubic-bezier(.22,1,.36,1) .05s both">About</div>
+  <h1 class="r-case-title" style="margin:0;font:{{ heroFont }} 'Archivo',sans-serif;letter-spacing:-.035em;text-transform:uppercase;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .15s both">Product designer for enterprise &amp; <span style="color:{{ accent }}">AI products.</span></h1>
+  <div style="font:400 22px/1.55 'Archivo',sans-serif;color:rgba(20,20,20,.75);max-width:900px;margin-top:36px;text-wrap:pretty;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .3s both">I design clear, high-utility experiences for complex products, from healthcare operations to legal tech. Currently at Attack Capital, New York. Previously at Arnifi, Dubai.</div>
+<div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.55);max-width:900px;margin-top:16px;text-wrap:pretty;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .38s both">I work in Figma and build in Claude and Lovable, which means I can take an idea from a blank frame to a working, testable prototype in hours. That breadth, visual craft plus AI-powered execution, is what I bring to every product I work on.</div>
+  <div style="display:flex;gap:14px;margin-top:44px;flex-wrap:wrap;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .45s both">
+    <a href="mailto:shaivya2003@gmail.com" style="font:500 14px 'IBM Plex Mono',monospace;background:#141414;color:#F2F0EA;padding:16px 26px;letter-spacing:.02em;transition:background .25s ease" style-hover="background:{{ accent }};opacity:1">Email me</a>
+    <a href="https://www.linkedin.com/in/shaivya-shashwat/" target="_blank" rel="noopener" style="font:500 14px 'IBM Plex Mono',monospace;border:1px solid #141414;padding:15px 26px;letter-spacing:.02em;transition:background .25s ease,color .25s ease" style-hover="background:#141414;color:#F2F0EA;opacity:1">LinkedIn ↗</a>
+    <a href="Shaivya Portfolio - Home.dc.html" style="font:500 14px 'IBM Plex Mono',monospace;border:1px solid #141414;padding:15px 26px;letter-spacing:.02em;transition:background .25s ease,color .25s ease" style-hover="background:#141414;color:#F2F0EA;opacity:1">View projects</a>
+  </div>
+  <div style="font:400 13px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);margin-top:24px;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .55s both">shaivya2003@gmail.com · +91 88004 05878</div>
+</div>
+
+<!-- ===== 2 · Expertise (anchor section, metrics embedded) ===== -->
+<div style="padding:90px 40px;border-bottom:1px solid #141414">
+  <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:64px">
+    <div data-reveal="left" style="font:500 13px 'IBM Plex Mono',monospace;color:{{ accent }}">01</div>
+    <div style="font:800 44px 'Archivo',sans-serif;letter-spacing:-.02em">Expertise</div>
+    <div style="font:400 15px 'Archivo',sans-serif;color:rgba(20,20,20,.5)">what I'm best at, with the numbers to back it</div>
+  </div>
+  <div data-count-anchor="" class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid #141414">
+    <div data-reveal style="padding:48px 40px;border-right:1px solid #141414;border-bottom:1px solid #141414;display:flex;flex-direction:column;gap:0">
+      <div style="font:900 72px/1 'Archivo',sans-serif;letter-spacing:-.03em;color:{{ accent }}">{{ mProducts }}</div>
+      <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:8px;margin-bottom:28px">AI products shipped</div>
+      <div style="font:800 22px 'Archivo',sans-serif;letter-spacing:-.01em;margin-bottom:10px">Enterprise product design</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.65);text-wrap:pretty">End-to-end UX for complex workflows: dashboards, pipelines, and multi-role platforms that stay calm under density.</div>
+    </div>
+    <div data-reveal style="padding:48px 40px;border-bottom:1px solid #141414;display:flex;flex-direction:column;gap:0">
+      <div style="font:900 72px/1 'Archivo',sans-serif;letter-spacing:-.03em;color:{{ accent }}">4+</div>
+      <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:8px;margin-bottom:28px">Domains in production</div>
+      <div style="font:800 22px 'Archivo',sans-serif;letter-spacing:-.01em;margin-bottom:10px">AI product design</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.65);text-wrap:pretty">Interfaces where automation stays legible and humans stay in control: receptionists, scribes, claims agents, sales trainers.</div>
+    </div>
+    <div data-reveal style="padding:48px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:0">
+      <div style="font:900 72px/1 'Archivo',sans-serif;letter-spacing:-.03em;color:{{ accent }}">{{ mFriction }}%</div>
+      <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:8px;margin-bottom:28px">Less design-to-dev friction</div>
+      <div style="font:800 22px 'Archivo',sans-serif;letter-spacing:-.01em;margin-bottom:10px">Design systems</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.65);text-wrap:pretty">Token and component systems built from scratch, designed so products scale without falling apart.</div>
+    </div>
+    <div data-reveal style="padding:48px 40px;display:flex;flex-direction:column;gap:0">
+      <div style="font:900 72px/1 'Archivo',sans-serif;letter-spacing:-.03em;color:{{ accent }}">{{ mImpressions }}k</div>
+      <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:8px;margin-bottom:28px">Weekly impressions, up from 15k</div>
+      <div style="font:800 22px 'Archivo',sans-serif;letter-spacing:-.01em;margin-bottom:10px">Motion &amp; product storytelling</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.65);text-wrap:pretty">Launch films and animated demos that turn feature releases into stories worth watching.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 3 · How I work ===== -->
+<div style="padding:90px 40px;border-bottom:1px solid #141414;background:#141414;color:#F2F0EA">
+  <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:64px">
+    <div data-reveal="left" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A">02</div>
+    <div style="font:800 44px 'Archivo',sans-serif;letter-spacing:-.02em">How I work</div>
+  </div>
+  <!-- Core skills -->
+  <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px">
+    <div data-reveal style="display:flex;flex-direction:column;gap:18px">
+      <div style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#E8A07A">Interaction &amp; prototyping</div>
+      <div style="font:400 16px/1.7 'Archivo',sans-serif;color:rgba(242,240,234,.8);text-wrap:pretty">Figma for systems and screens; Claude and Lovable for working prototypes in hours, not sprints. Ideas get validated before engineering touches them.</div>
+    </div>
+    <div data-reveal style="display:flex;flex-direction:column;gap:18px">
+      <div style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#E8A07A">UX writing</div>
+      <div style="font:400 16px/1.7 'Archivo',sans-serif;color:rgba(242,240,234,.8);text-wrap:pretty">Product copy, microcopy, navigation labels, CTA language, content hierarchy. The words are the interface, and most designers skip them.</div>
+      <div style="font:400 13px/1.6 'IBM Plex Mono',monospace;color:rgba(242,240,234,.45)">Every label on this page is part of the design.</div>
+    </div>
+    <div data-reveal style="display:flex;flex-direction:column;gap:18px">
+      <div style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#E8A07A">Research</div>
+      <div style="font:400 16px/1.7 'Archivo',sans-serif;color:rgba(242,240,234,.8);text-wrap:pretty">User interviews and usability testing on fast loops, enough signal to decide, never research theater.</div>
+    </div>
+  </div>
+  <!-- Additional strengths, visually lighter -->
+  <div style="margin-top:72px;padding-top:48px;border-top:1px solid rgba(242,240,234,.2)">
+    <div style="font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.45);margin-bottom:28px">Beyond design</div>
+    <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px">
+      <div data-reveal style="display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 18px 'Archivo',sans-serif;color:rgba(242,240,234,.9)">Video editing &amp; motion</div>
+        <div style="font:400 14px/1.6 'Archivo',sans-serif;color:rgba(242,240,234,.55)">After Effects, Lottie, AI video tools. 15+ launch films end to end.</div>
+      </div>
+      <div data-reveal style="display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 18px 'Archivo',sans-serif;color:rgba(242,240,234,.9)">Content writing</div>
+        <div style="font:400 14px/1.6 'Archivo',sans-serif;color:rgba(242,240,234,.55)">Scripts, launch posts, and marketing pages that carry the brand voice.</div>
+      </div>
+      <div data-reveal style="display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 18px 'Archivo',sans-serif;color:rgba(242,240,234,.9)">Founder collaboration</div>
+        <div style="font:400 14px/1.6 'Archivo',sans-serif;color:rgba(242,240,234,.55)">Pitch decks, fundraising demos, zero-to-one thinking with founding teams.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4 · Background ===== -->
+<div style="padding:72px 40px;border-bottom:1px solid #141414">
+  <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:48px">
+    <div data-reveal="left" style="font:500 13px 'IBM Plex Mono',monospace;color:{{ accent }}">03</div>
+    <div style="font:800 44px 'Archivo',sans-serif;letter-spacing:-.02em">Background</div>
+  </div>
+  <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px">
+    <div data-reveal style="display:flex;flex-direction:column;gap:28px">
+      <div style="font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45)">Experience</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:700 20px 'Archivo',sans-serif">Attack Capital, Product Designer</div>
+        <div style="font:400 13px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Dec 2025, Present · New York</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:700 20px 'Archivo',sans-serif">Arnifi, Product Designer</div>
+        <div style="font:400 13px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Oct 2024, Dec 2025 · Dubai</div>
+      </div>
+    </div>
+    <div data-reveal style="display:flex;flex-direction:column;gap:28px">
+      <div style="font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45)">Education &amp; qualifications</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:700 20px 'Archivo',sans-serif">B.Tech, Computer Science</div>
+        <div style="font:400 13px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">KIIT · Graduated 2025</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:700 20px 'Archivo',sans-serif">Google UX Design Professional Certificate</div>
+        <div style="font:400 13px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Coursera</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5 · CTA ===== -->
+<div style="padding:90px 40px 48px;background:{{ accent }};color:#F2F0EA;display:flex;flex-direction:column;gap:52px">
+  <a href="mailto:shaivya2003@gmail.com" data-reveal style="font:900 80px/1.02 'Archivo',sans-serif;letter-spacing:-.03em;text-transform:uppercase;color:#F2F0EA;display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1);max-width:1100px" style-hover="transform:translateX(12px);opacity:1">Email me about your project ↗</a>
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px 'IBM Plex Mono',monospace">
+    <div style="opacity:.85">shaivya2003@gmail.com · +91 88004 05878</div>
+    <div style="display:flex;gap:28px"><a href="https://www.linkedin.com/in/shaivya-shashwat/" target="_blank" rel="noopener">LinkedIn</a><a href="assets/resume.pdf" download="Shaivya-Shashwat-Resume.pdf">Download resume ↓</a></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font:400 11px 'IBM Plex Mono',monospace;opacity:.6;text-transform:uppercase;letter-spacing:.06em">
+    <div>© 2026 Shaivya Shashwat</div>
+    <div><a href="Shaivya Portfolio - Home.dc.html">← Back to work</a></div>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {
+    &quot;editor&quot;: &quot;color&quot;,
+    &quot;default&quot;: &quot;#B4451F&quot;,
+    &quot;options&quot;: [&quot;#B4451F&quot;, &quot;#2440D8&quot;, &quot;#6B7040&quot;, &quot;#141414&quot;],
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Theme&quot;
+  },
+  &quot;heroSize&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;large&quot;, &quot;medium&quot;],
+    &quot;default&quot;: &quot;large&quot;,
+    &quot;tsType&quot;: &quot;'large' | 'medium'&quot;,
+    &quot;section&quot;: &quot;Layout&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { started: false, mProducts: 0, mFriction: 0, mImpressions: 0 };
+
+  componentDidMount() {
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some(e => e.isIntersecting) || this.state.started) return;
+      io.disconnect();
+      clearInterval(this._poll);
+      this.setState({ started: true });
+      const t0 = performance.now(), dur = 1000;
+      const tick = (now) => {
+        const p = Math.min(1, (now - t0) / dur);
+        const ease = 1 - Math.pow(1 - p, 3);
+        this.setState({
+          mProducts: Math.round(4 * ease),
+          mFriction: Math.round(40 * ease),
+          mImpressions: Math.round(32 * ease),
+        });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.15 });
+    // data-count-anchor sits outside any sc-if, so it is stable; poll briefly
+    // in case the template is still streaming when we mount.
+    this._poll = setInterval(() => {
+      const el = document.querySelector('[data-count-anchor]');
+      if (el) { io.observe(el); clearInterval(this._poll); }
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    if (this._poll) clearInterval(this._poll);
+  }
+
+  renderVals() {
+    const heroSize = this.props.heroSize ?? 'large';
+    return {
+      accent: this.props.accent ?? '#B4451F',
+      heroFont: heroSize === 'large' ? '900 92px/1' : '900 62px/1.05',
+      mProducts: this.state.mProducts,
+      mFriction: this.state.mFriction,
+      mImpressions: this.state.mImpressions,
+    };
+  }
+}
+</script>
+</body>
+</html>

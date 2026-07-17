@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#B4451F"/><text x="50" y="62" font-family="Archivo,sans-serif" font-size="34" font-weight="900" fill="#F2F0EA" text-anchor="middle">SS</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F2F0EA;color:#141414;font-family:'Archivo',sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.7}
+::selection{background:#B4451F;color:#F2F0EA}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes statusPulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes caretBlink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes expandDown{from{grid-template-rows:0fr}to{grid-template-rows:1fr}}
+@keyframes introOut{0%,55%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+@keyframes introName{0%{opacity:0;transform:translateY(14px)}18%,70%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-10px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+<link rel="stylesheet" href="./responsive.css">
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="./ui-motion.js"></script>
+</helmet>
+
+<div data-screen-label="Home" class="r-page" style="min-width:1100px">
+
+<!-- ===== Intro ===== -->
+<div style="position:fixed;inset:0;z-index:100;background:#141414;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:introOut 1.5s cubic-bezier(.76,0,.24,1) forwards">
+  <div style="font:500 14px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.22em;color:#F2F0EA;animation:introName 1.5s ease forwards">Shaivya Shashwat</div>
+</div>
+
+<!-- ===== Top strip ===== -->
+<div class="r-nav" style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:24px;align-items:center;padding:20px 40px;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #141414;background:#F2F0EA">
+  <div>Shaivya Shashwat</div>
+  <div style="color:rgba(20,20,20,.6)">Product Designer</div>
+  <a href="mailto:shaivya2003@gmail.com" style="color:rgba(20,20,20,.75)">shaivya2003@gmail.com</a>
+  <div class="r-nav-links" style="display:flex;gap:24px;align-items:center">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="About - Shaivya Shashwat.dc.html">About</a>
+    <sc-if value="{{ showAvailability }}" hint-placeholder-val="{{ true }}">
+      <span style="color:{{ accent }};display:inline-flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:{{ accent }};display:inline-block;animation:statusPulse 2.4s ease-in-out infinite"></span>{{ statusText }}<span style="display:inline-block;width:1px;height:12px;background:{{ accent }};animation:caretBlink 1s step-end infinite"></span></span>
+    </sc-if>
+  </div>
+</div>
+
+
+<!-- ===== Mobile header ===== -->
+<div class="r-mobilebar" style="display:none;position:sticky;top:0;z-index:60;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid #141414;background:#F2F0EA">
+  <div style="display:flex;align-items:center;gap:12px">
+    <div style="font:800 22px 'Archivo',sans-serif;letter-spacing:-.02em">Shaivya</div>
+    <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(20,20,20,.06);padding:5px 10px;font:500 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">{{ timeText }} ◷</span>
+  </div>
+  <button onClick="{{ toggleMenu }}" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px">
+    <span style="display:block;width:26px;height:2px;background:#141414"></span>
+    <span style="display:block;width:26px;height:2px;background:#141414"></span>
+    <span style="display:block;width:26px;height:2px;background:#141414"></span>
+  </button>
+</div>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div class="r-menu" style="position:fixed;inset:0;z-index:120;background:#F2F0EA;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid #141414">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="font:800 22px 'Archivo',sans-serif;letter-spacing:-.02em">Shaivya</div>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(20,20,20,.06);padding:5px 10px;font:500 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">{{ timeText }} ◷</span>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Close menu" style="background:none;border:none;cursor:pointer;padding:6px;font:400 30px 'Archivo',sans-serif;line-height:1;color:#141414">✕</button>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:36px 22px">
+    <a onClick="{{ closeMenu }}" href="#work" style="font:800 40px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414">Work</a>
+    <a onClick="{{ closeMenu }}" href="#experience" style="font:800 40px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414">Experience</a>
+    <a href="About - Shaivya Shashwat.dc.html" style="font:800 40px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414">About</a>
+    <a href="mailto:shaivya2003@gmail.com" style="font:800 40px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414">Contact</a>
+    <a href="assets/resume.pdf" download="Shaivya-Shashwat-Resume.pdf" style="font:800 40px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414">Resume</a>
+  </div>
+  <div style="border-top:1px solid #141414;overflow:hidden;white-space:nowrap;padding:13px 0;background:rgba(20,20,20,.04)">
+    <div style="display:inline-block;animation:marquee 22s linear infinite;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.04em;color:rgba(20,20,20,.6)"><span>Product Designer @ Attack Capital&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;New York&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Previously Arnifi, Dubai&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Available for 2026&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span><span>Product Designer @ Attack Capital&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;New York&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Previously Arnifi, Dubai&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Available for 2026&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span></div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ===== Hero ===== -->
+<div style="position:relative;padding:72px 40px 56px;border-bottom:1px solid #141414;overflow:hidden">
+  <x-import component-from-global-scope="dotted-surface" from="./dotted-surface.js" dot-color="#141414" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+  <h1 class="r-hero-title" style="position:relative;margin:0;font:900 132px/0.95 'Archivo',sans-serif;letter-spacing:-.035em;text-transform:uppercase;animation:riseIn .8s cubic-bezier(.22,1,.36,1) 1.25s both">Systems,<br>Stories &amp;<br><span style="color:{{ accent }}">AI Products</span></h1>
+  <div class="r-hero-sub" style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:52px;max-width:960px;animation:riseIn .8s cubic-bezier(.22,1,.36,1) 1.45s both">
+    <div style="font:400 18px/1.55 'Archivo',sans-serif;color:rgba(20,20,20,.78);text-wrap:pretty">I turn complex workflows into products people can actually use, four shipped AI products and a design system built from scratch, from healthcare operations to legal tech.</div>
+    <div style="font:400 13px/1.8 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Currently, Attack Capital, New York<br>Previously, Arnifi, Dubai<br>Email, shaivya2003@gmail.com<br>Phone, +91 88004 05878</div>
+  </div>
+</div>
+
+<!-- ===== Work index ===== -->
+<div class="r-avail" style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 40px;border-bottom:1px solid #141414;background:#141414;color:#F2F0EA">
+  <div style="font:400 14px 'Archivo',sans-serif;color:rgba(242,240,234,.75)">Open to product design roles and freelance engagements for 2026.</div>
+  <div style="display:flex;gap:12px;flex-shrink:0">
+    <a href="https://www.linkedin.com/in/shaivya-shashwat/" target="_blank" rel="noopener" style="font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:#141414;background:#F2F0EA;padding:10px 18px;transition:background .25s ease,color .25s ease" style-hover="background:#B4451F;color:#F2F0EA;opacity:1">Connect on LinkedIn</a>
+    <a href="mailto:shaivya2003@gmail.com" style="font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:#F2F0EA;border:1px solid rgba(242,240,234,.4);padding:9px 18px;transition:border-color .25s ease" style-hover="border-color:#F2F0EA;opacity:1">Email me</a>
+  </div>
+</div>
+<div id="work">
+  <div class="r-work-head" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;padding:14px 40px;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);border-bottom:1px solid #141414">
+    <div>No.</div><div>Project</div><div>Nature</div><div>Role</div><div>Year</div><div></div>
+  </div>
+
+  <!-- 01 HealOS -->
+  <div class="r-row" onClick="{{ toggle0 }}" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(20,20,20,.25);cursor:pointer;transition:background .15s,color .15s" style-hover="background:#141414;color:#F2F0EA">
+    <div style="font:500 13px 'IBM Plex Mono',monospace">01</div>
+    <div class="r-row-title" style="font:800 42px 'Archivo',sans-serif;letter-spacing:-.02em">HealOS</div>
+    <div style="font:400 14px 'Archivo',sans-serif;opacity:.7">AI healthcare operations platform</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">Lead Designer</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">2026</div>
+    <div class="r-chev" style="font:400 20px 'Archivo',sans-serif;text-align:right;transition:transform .25s ease" style-hover="transform:translateX(-4px)">{{ chev0 }}</div>
+  </div>
+  <div style="overflow:hidden;max-height:{{ maxh0 }};transition:max-height .6s cubic-bezier(.22,1,.36,1)"><div style="padding:32px 40px 40px;border-bottom:1px solid rgba(20,20,20,.25);background:#141414">
+      <div class="r-panel" style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start">
+        <img src="assets/healos/dashboard.png" alt="media-healos" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="color:#F2F0EA;display:flex;flex-direction:column;gap:16px;font:400 14px/1.6 'Archivo',sans-serif">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">Overview</div>
+          <div style="opacity:.85;text-wrap:pretty">End-to-end redesign of an AI-powered healthcare operations platform, scheduling, claims, and clinical workflows unified for practice staff.</div>
+          <div style="font:400 12px/1.8 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Figma · Prototype · Videos<br>Lead Product Designer · Attack Capital</div>
+          <a href="HealOS - Case Study.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A;text-transform:uppercase;letter-spacing:.06em;transition:letter-spacing .3s ease" style-hover="letter-spacing:.12em;opacity:1">Read the case study →</a>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- 02 LegalClerk -->
+  <div class="r-row" onClick="{{ toggle1 }}" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(20,20,20,.25);cursor:pointer;transition:background .15s,color .15s" style-hover="background:#141414;color:#F2F0EA">
+    <div style="font:500 13px 'IBM Plex Mono',monospace">02</div>
+    <div class="r-row-title" style="font:800 42px 'Archivo',sans-serif;letter-spacing:-.02em">LegalClerk</div>
+    <div style="font:400 14px 'Archivo',sans-serif;opacity:.7">Case management for injury law firms</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">Product Designer</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">2026</div>
+    <div class="r-chev" style="font:400 20px 'Archivo',sans-serif;text-align:right;transition:transform .25s ease" style-hover="transform:translateX(-4px)">{{ chev1 }}</div>
+  </div>
+  <div style="overflow:hidden;max-height:{{ maxh1 }};transition:max-height .6s cubic-bezier(.22,1,.36,1)"><div style="padding:32px 40px 40px;border-bottom:1px solid rgba(20,20,20,.25);background:#141414">
+      <div class="r-panel" style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start">
+        <img src="assets/legalclerk/dashboard.png" alt="media-legalclerk" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="color:#F2F0EA;display:flex;flex-direction:column;gap:16px;font:400 14px/1.6 'Archivo',sans-serif">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">Overview</div>
+          <div style="opacity:.85;text-wrap:pretty">Enterprise case management platform for personal injury law firms, an AI Clerk captures every intake call, qualifies leads, and routes them into the pipeline.</div>
+          <div style="font:400 12px/1.8 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Figma · Prototype<br>Product Designer · Attack Capital</div>
+          <a href="LegalClerk - Case Study.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A;text-transform:uppercase;letter-spacing:.06em;transition:letter-spacing .3s ease" style-hover="letter-spacing:.12em;opacity:1">Read the case study →</a>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- 03 OpenMic -->
+  <div class="r-row" onClick="{{ toggle4 }}" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(20,20,20,.25);cursor:pointer;transition:background .15s,color .15s" style-hover="background:#141414;color:#F2F0EA">
+    <div style="font:500 13px 'IBM Plex Mono',monospace">03</div>
+    <div class="r-row-title" style="font:800 42px 'Archivo',sans-serif;letter-spacing:-.02em">OpenMic</div>
+    <div style="font:400 14px 'Archivo',sans-serif;opacity:.7">AI receptionist for healthcare practices</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">Product Designer</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">2026</div>
+    <div class="r-chev" style="font:400 20px 'Archivo',sans-serif;text-align:right;transition:transform .25s ease" style-hover="transform:translateX(-4px)">{{ chev4 }}</div>
+  </div>
+  <div style="overflow:hidden;max-height:{{ maxh4 }};transition:max-height .6s cubic-bezier(.22,1,.36,1)"><div style="padding:32px 40px 40px;border-bottom:1px solid rgba(20,20,20,.25);background:#141414">
+      <div class="r-panel" style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start">
+        <img src="assets/openmic/crm.png" alt="media-openmic" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="color:#F2F0EA;display:flex;flex-direction:column;gap:16px;font:400 14px/1.6 'Archivo',sans-serif">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">Overview</div>
+          <div style="opacity:.85;text-wrap:pretty">An AI receptionist experience for healthcare practices, call handling, scheduling, and patient triage through conversational AI.</div>
+          <div style="font:400 12px/1.8 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Prototype<br>Product Designer · Attack Capital</div>
+          <a href="OpenMic - Case Study.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A;text-transform:uppercase;letter-spacing:.06em;transition:letter-spacing .3s ease" style-hover="letter-spacing:.12em;opacity:1">Read the case study →</a>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- 04 SalesRoleplay -->
+  <div class="r-row" onClick="{{ toggle5 }}" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(20,20,20,.25);cursor:pointer;transition:background .15s,color .15s" style-hover="background:#141414;color:#F2F0EA">
+    <div style="font:500 13px 'IBM Plex Mono',monospace">04</div>
+    <div class="r-row-title" style="font:800 42px 'Archivo',sans-serif;letter-spacing:-.02em">SalesRoleplay</div>
+    <div style="font:400 14px 'Archivo',sans-serif;opacity:.7">AI sales training platform</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">Lead Designer</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">2026</div>
+    <div class="r-chev" style="font:400 20px 'Archivo',sans-serif;text-align:right;transition:transform .25s ease" style-hover="transform:translateX(-4px)">{{ chev5 }}</div>
+  </div>
+  <div style="overflow:hidden;max-height:{{ maxh5 }};transition:max-height .6s cubic-bezier(.22,1,.36,1)"><div style="padding:32px 40px 40px;border-bottom:1px solid rgba(20,20,20,.25);background:#141414">
+      <div class="r-panel" style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start">
+        <img src="assets/salesroleplay/homepage.png" alt="media-salesroleplay" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="color:#F2F0EA;display:flex;flex-direction:column;gap:16px;font:400 14px/1.6 'Archivo',sans-serif">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">Overview</div>
+          <div style="opacity:.85;text-wrap:pretty">An AI sales training tool, reps practice live roleplay calls against AI buyers and get scored, actionable feedback.</div>
+          <div style="font:400 12px/1.8 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Figma · Prototype<br>Lead Designer · Attack Capital</div>
+          <a href="SalesRoleplay - Case Study.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A;text-transform:uppercase;letter-spacing:.06em;transition:letter-spacing .3s ease" style-hover="letter-spacing:.12em;opacity:1">Read the case study →</a>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- 05 Arnifi Design System -->
+  <div class="r-row" onClick="{{ toggle2 }}" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(20,20,20,.25);cursor:pointer;transition:background .15s,color .15s" style-hover="background:#141414;color:#F2F0EA">
+    <div style="font:500 13px 'IBM Plex Mono',monospace">05</div>
+    <div class="r-row-title" style="font:800 42px 'Archivo',sans-serif;letter-spacing:-.02em">Arnifi Design System</div>
+    <div style="font:400 14px 'Archivo',sans-serif;opacity:.7">Scalable system, built from scratch</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">Product Designer</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">2025</div>
+    <div class="r-chev" style="font:400 20px 'Archivo',sans-serif;text-align:right;transition:transform .25s ease" style-hover="transform:translateX(-4px)">{{ chev2 }}</div>
+  </div>
+  <div style="overflow:hidden;max-height:{{ maxh2 }};transition:max-height .6s cubic-bezier(.22,1,.36,1)"><div style="padding:32px 40px 40px;border-bottom:1px solid rgba(20,20,20,.25);background:#141414">
+      <div class="r-panel" style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start">
+        <img src="assets/arnifi-ds/colors-light.png" alt="media-arnifi-ds" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="color:#F2F0EA;display:flex;flex-direction:column;gap:16px;font:400 14px/1.6 'Archivo',sans-serif">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">Overview</div>
+          <div style="opacity:.85;text-wrap:pretty">Five colour families, 624 tokens, and 1,100+ hand-built component variants, one visual language across product, ads, and video. 40% less design-to-dev friction.</div>
+          <div style="font:400 12px/1.8 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Figma library<br>Product Designer · Arnifi</div>
+          <a href="Arnifi Design System - Case Study.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A;text-transform:uppercase;letter-spacing:.06em;transition:letter-spacing .3s ease" style-hover="letter-spacing:.12em;opacity:1">Read the case study →</a>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- 06 Arnifi Motion -->
+  <div class="r-row" onClick="{{ toggle3 }}" style="display:grid;grid-template-columns:64px 1fr 360px 200px 110px 60px;align-items:center;padding:24px 40px;border-bottom:1px solid #141414;cursor:pointer;transition:background .15s,color .15s" style-hover="background:#141414;color:#F2F0EA">
+    <div style="font:500 13px 'IBM Plex Mono',monospace">06</div>
+    <div class="r-row-title" style="font:800 42px 'Archivo',sans-serif;letter-spacing:-.02em">Arnifi Motion</div>
+    <div style="font:400 14px 'Archivo',sans-serif;opacity:.7">Marketing video &amp; product storytelling</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">Motion + Product</div>
+    <div style="font:400 12px 'IBM Plex Mono',monospace;opacity:.7">2025</div>
+    <div class="r-chev" style="font:400 20px 'Archivo',sans-serif;text-align:right;transition:transform .25s ease" style-hover="transform:translateX(-4px)">{{ chev3 }}</div>
+  </div>
+  <div style="overflow:hidden;max-height:{{ maxh3 }};transition:max-height .6s cubic-bezier(.22,1,.36,1)"><div style="padding:32px 40px 40px;border-bottom:1px solid #141414;background:#141414">
+      <div class="r-panel" style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start">
+        <img src="assets/arnifi-motion/poster.png" alt="Arnifi Motion, dashboard film frame" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="color:#F2F0EA;display:flex;flex-direction:column;gap:16px;font:400 14px/1.6 'Archivo',sans-serif">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">Overview</div>
+          <div style="opacity:.85;text-wrap:pretty">Fifteen-plus product films for feature launches, a shared motion language that grew weekly impressions from 15,073 to 32,193.</div>
+          <div style="font:400 12px/1.8 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Videos · After Effects · Figma<br>Motion Graphics + Product Designer · Arnifi</div>
+          <a href="Arnifi Motion - Case Study.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;color:#E8A07A;text-transform:uppercase;letter-spacing:.06em;transition:letter-spacing .3s ease" style-hover="letter-spacing:.12em;opacity:1">Read the case study →</a>
+        </div>
+      </div>
+    </div></div>
+</div>
+
+<!-- ===== Experience + About ===== -->
+<div id="experience" class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #141414">
+  <div data-reveal style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:36px">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">Experience</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Archivo',sans-serif">Attack Capital, Product Designer</div>
+      <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Dec 2025 / Present · New York</div>
+      <div style="font:400 15px/1.6 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">End-to-end UX for four AI-powered SaaS products across healthcare, legal tech, conversational AI, and sales enablement. Working directly with founders from concept to production.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Archivo',sans-serif">Arnifi, Product Designer</div>
+      <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Oct 2024 / Dec 2025 · Dubai</div>
+      <div style="font:400 15px/1.6 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">Built the design system from scratch, refined core product UI, and produced motion graphics and marketing video that more than doubled weekly impressions.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 18px 'Archivo',sans-serif">B.Tech, Computer Science, KIIT</div>
+      <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">2025 · Google UX Design Professional Certificate</div>
+    </div>
+  </div>
+  <div id="about" data-reveal style="padding:56px 40px;display:flex;flex-direction:column;gap:24px">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">About</div>
+    <div style="font:400 20px/1.55 'Archivo',sans-serif;color:rgba(20,20,20,.85);text-wrap:pretty">I believe a portfolio should behave like a well-made product. Every layout, transition, and detail here demonstrates the same systems thinking I bring to enterprise and AI product work.</div>
+    <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.7);text-wrap:pretty">Skilled in visual design, prototyping, and user research, interviews and usability testing. I prototype fast with Figma, Claude, and Lovable to validate before engineering.</div>
+    <div style="display:flex;gap:16px;margin-top:8px">
+      <a href="assets/resume.pdf" download="Shaivya-Shashwat-Resume.pdf" style="font:500 13px 'IBM Plex Mono',monospace;color:#F2F0EA;background:#141414;padding:14px 22px;text-transform:uppercase;letter-spacing:.06em;transition:background .25s ease,transform .25s ease" style-hover="background:#B4451F;transform:translateY(-2px);opacity:1">Download resume ↓</a>
+      <a href="mailto:shaivya2003@gmail.com" style="font:500 13px 'IBM Plex Mono',monospace;border:1px solid #141414;padding:13px 22px;text-transform:uppercase;letter-spacing:.06em;transition:background .25s ease,color .25s ease" style-hover="background:#141414;color:#F2F0EA;opacity:1">Email me</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div style="padding:72px 40px 48px;background:{{ accent }};color:#F2F0EA;display:flex;flex-direction:column;gap:56px">
+  <a href="mailto:shaivya2003@gmail.com" data-reveal class="r-footer-title" style="font:900 96px/1 'Archivo',sans-serif;letter-spacing:-.03em;text-transform:uppercase;color:#F2F0EA;display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateX(12px);opacity:1">Email me about your project ↗</a>
+  <div class="r-footer-row" style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px 'IBM Plex Mono',monospace">
+    <div style="opacity:.8">shaivya2003@gmail.com</div>
+    <div style="display:flex;gap:28px"><a href="https://www.linkedin.com/in/shaivya-shashwat/" target="_blank" rel="noopener">LinkedIn</a><a href="assets/resume.pdf" download="Shaivya-Shashwat-Resume.pdf">Resume ↓</a></div>
+  </div>
+  <div class="r-footer-row" style="display:flex;justify-content:space-between;font:400 11px 'IBM Plex Mono',monospace;opacity:.6;text-transform:uppercase;letter-spacing:.06em">
+    <div>© 2026 Shaivya Shashwat</div>
+    <div>{{ clockText }}</div>
+    <div>Designed as a product, not a template</div>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#B4451F&quot;, &quot;options&quot;: [&quot;#B4451F&quot;, &quot;#2440D8&quot;, &quot;#6B7040&quot;, &quot;#141414&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot;},
+  &quot;showAvailability&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Header&quot;}
+}">
+class Component extends DCLogic {
+  state = { open: [true, false, false, false, false, false], statusText: '', clockText: '', timeText: '', menuOpen: false };
+
+  componentDidMount() {
+    // Typing breadcrumb in the nav: cycles through status phrases
+    this._phrases = ['Attack Capital / Product Designer', 'Available for 2026', 'New York · Remote'];
+    this._pi = 0; this._ci = 0; this._deleting = false;
+    const tick = () => {
+      const phrase = this._phrases[this._pi];
+      if (!this._deleting) {
+        this._ci++;
+        if (this._ci >= phrase.length) { this._deleting = true; this._typeTimer = setTimeout(tick, 2600); this.setState({ statusText: phrase }); return; }
+      } else {
+        this._ci--;
+        if (this._ci <= 0) { this._deleting = false; this._pi = (this._pi + 1) % this._phrases.length; }
+      }
+      this.setState({ statusText: phrase.slice(0, this._ci) });
+      this._typeTimer = setTimeout(tick, this._deleting ? 28 : 55);
+    };
+    this._typeTimer = setTimeout(tick, 1600);
+
+    // Live clock in the footer
+    const clock = () => {
+      const now = new Date();
+      const date = now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+      const t12 = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+      this.setState({ clockText: date + ' · ' + time + ' · Local', timeText: t12 });
+    };
+    clock();
+    this._clockTimer = setInterval(clock, 1000);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._typeTimer);
+    clearInterval(this._clockTimer);
+  }
+
+  toggle(i) {
+    this.setState(s => {
+      const wasOpen = s.open[i];
+      const open = [false, false, false, false, false, false];
+      open[i] = !wasOpen;
+      return { open };
+    });
+  }
+
+  toggleMenu() { this.setState(s => ({ menuOpen: !s.menuOpen })); }
+  closeMenu() { this.setState({ menuOpen: false }); }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#B4451F';
+    const open = this.state.open;
+    const vals = {
+      accent,
+      showAvailability: this.props.showAvailability ?? true,
+      statusText: this.state.statusText,
+      clockText: this.state.clockText,
+      timeText: this.state.timeText,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.toggleMenu(),
+      closeMenu: () => this.closeMenu(),
+    };
+    for (let i = 0; i < 6; i++) {
+      vals['open' + i] = open[i];
+      vals['maxh' + i] = open[i] ? '860px' : '0px';
+      vals['chev' + i] = open[i] ? '−' : '+';
+      vals['toggle' + i] = () => this.toggle(i);
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

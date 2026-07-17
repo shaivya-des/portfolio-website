@@ -1,0 +1,6 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/", "destination": "/Shaivya Portfolio - Home.dc.html" }
+  ]
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F2F0EA;color:#141414;font-family:'Archivo',sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.7}
+::selection{background:#B4451F;color:#F2F0EA}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+</style>
+<link rel="stylesheet" href="./responsive.css">
+<script src="./ui-motion.js"></script>
+</helmet>
+
+<div data-screen-label="OpenMic Case Study" class="r-page" style="min-width:1100px">
+
+<!-- ===== Top strip ===== -->
+<div style="position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #141414;background:#F2F0EA">
+  <a href="Shaivya Portfolio - Home.dc.html">← Shaivya Shashwat</a>
+  <div style="display:flex;gap:24px;align-items:center">
+    <span style="color:rgba(20,20,20,.5)">Case Study 03</span>
+    <span style="color:#B4451F">OpenMic</span>
+  </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<div style="padding:72px 40px 56px;border-bottom:1px solid #141414">
+  <div style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#B4451F;margin-bottom:20px";animation:riseIn .6s cubic-bezier(.22,1,.36,1) .05s both">AI Voice-Agent Platform · 2026</div>
+  <h1 class="r-case-title" style="margin:0;font:900 110px/0.95 'Archivo',sans-serif;letter-spacing:-.035em;text-transform:uppercase";animation:riseIn .7s cubic-bezier(.22,1,.36,1) .18s both">OpenMic</h1>
+  <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin:44px 0 56px";animation:riseIn .7s cubic-bezier(.22,1,.36,1) .32s both">
+    <div style="font:400 18px/1.55 'Archivo',sans-serif;color:rgba(20,20,20,.78);text-wrap:pretty;grid-column:span 2">A voice agent that answers every inbound call, live in about 20 minutes of guided setup. I designed the complete admin experience: agent persona configuration, voice lab, onboarding, CRM, and call inbox.</div>
+    <div style="font:400 13px/1.9 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Role, Product Designer<br>Team, Attack Capital<br>Scope, Onboarding + dashboard<br>Tools, Figma · Lovable · Claude</div>
+  </div>
+  <video src="assets/openmic/dashboard-navigation.mp4" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsinline="{{ true }}" style="display:block;width:100%;border:1px solid #141414"></video>
+  <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);margin-top:10px">▶ Live tour, CRM, call logs, voice lab, contacts, integrations, usage</div>
+</div>
+
+<!-- ===== Problem ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414">
+  <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">01 / The problem</div>
+  <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px;max-width:820px">
+    <div style="font:600 30px/1.3 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Voice AI is powerful, and terrifying to hand your front desk to.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">A practice adopting an AI receptionist is trusting software with its patients' first impression. The design bet: make setup feel like answering questions about your business, not programming an agent, and make everything the agent does afterwards auditable in one inbox. Configuration depth stays available for power users; it never blocks the first call.</div>
+  </div>
+</div>
+
+<!-- ===== Onboarding ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414">
+  <div style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="left" style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">02 / Onboarding</div>
+    <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">From business name to working agent in one guided flow.</div>
+    <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Signup asks for the business, not the tech: name, hours, what callers usually need. The agent assembles itself from those answers, and a voice library lets the practice pick how it sounds before going live.</div>
+  </div>
+  <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <img src="assets/openmic/onboarding-walkthrough.gif" alt="Onboarding walkthrough animation" style="display:block;width:100%;border:1px solid #141414">
+      <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">▶ Onboarding in motion, entering a business name, advancing the flow</div>
+    </div>
+    <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+      <img src="assets/openmic/onboarding-169.png" alt="Onboarding experience" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(20,20,20,.25)">
+      <img src="assets/openmic/voice-library-169.png" alt="Voice library" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(20,20,20,.25)">
+    </div>
+  </div>
+</div>
+
+<!-- ===== Agent workspace (dark) ===== -->
+<div style="border-bottom:1px solid #141414;background:#141414;color:#F2F0EA">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:20px">
+      <div data-reveal="left" style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">03 / The agent workspace</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Persona, prompts, and voice, legible to non-engineers.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(242,240,234,.7);text-wrap:pretty">Agent configuration reads as a form about behavior, not a prompt console. The voice lab makes tuning audible, and every capability the agent gains is visible in the same panel where you'd revoke it.</div>
+    </div>
+    <div class="r-2col" style="padding:56px 40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <img src="assets/openmic/agent-config-169.png" alt="Agent configuration" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">AI assistant configuration</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <img src="assets/openmic/voice-lab-169.png" alt="Voice lab" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(242,240,234,.3)">
+        <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.55)">Voice lab</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Operations ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414">
+  <div style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="left" style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">04 / After the call</div>
+    <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Every conversation lands somewhere a human can act on it.</div>
+    <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">A built-in CRM with table, board, list, and sheet views; a call-log inbox for reviewing what the agent said; and a dashboard walkthrough that shows how the whole loop connects. The AI takes the call, the practice keeps the record.</div>
+    <div style="font:400 12px/1.7 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5)">▶ GIF, navigating CRM → call logs → voice lab → usage</div>
+  </div>
+  <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px">
+    <img src="assets/openmic/dashboard-walkthrough.gif" alt="Dashboard navigation animation" style="display:block;width:100%;border:1px solid #141414">
+    <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <img src="assets/openmic/crm-169.png" alt="Built-in CRM" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(20,20,20,.25)">
+        <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Built-in CRM, customers with source tags</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <img src="assets/openmic/inbox-169.png" alt="Call log inbox" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border:1px solid rgba(20,20,20,.25)">
+        <div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Call-log inbox</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Craft ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414">
+  <div style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="left" style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">05 / Details</div>
+    <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Grouped navigation and a configuration panel built for trust.</div>
+    <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">The sidebar groups the platform by job, agents, operations, developer tools, with trial status always visible. Close-ups of the states, spacing, and hierarchy that keep a dense product calm.</div>
+  </div>
+  <div class="r-2col" style="padding:56px 40px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
+    <img src="assets/openmic/cu-sidebar.png" alt="Navigation sidebar close-up" style="display:block;width:220px;border:1px solid rgba(20,20,20,.25)">
+    <img src="assets/openmic/cu-config.png" alt="Agent configuration close-up" style="display:block;width:100%;max-width:640px;border:1px solid rgba(20,20,20,.25)">
+  </div>
+</div>
+
+<!-- ===== Footer nav ===== -->
+<div style="padding:64px 40px;background:#B4451F;color:#F2F0EA;display:flex;justify-content:space-between;align-items:center">
+  <a href="Shaivya Portfolio - Home.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em">← All work</a>
+  <a href="SalesRoleplay - Case Study.dc.html" style="font:900 44px 'Archivo',sans-serif;letter-spacing:-.02em;text-transform:uppercase;display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateX(10px);opacity:1">Next, SalesRoleplay →</a>
+</div>
+
+</div>
+</x-dc>
+</body>
+</html>

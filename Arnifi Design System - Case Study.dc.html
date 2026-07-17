@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F2F0EA;color:#141414;font-family:'Archivo',sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.7}
+::selection{background:#B4451F;color:#F2F0EA}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+</style>
+<link rel="stylesheet" href="./responsive.css">
+<script src="./ui-motion.js"></script>
+</helmet>
+
+<div data-screen-label="Arnifi Design System Case Study" class="r-page" style="min-width:1100px">
+
+<!-- ===== Top strip ===== -->
+<div style="position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #141414;background:#F2F0EA">
+  <a href="Shaivya Portfolio - Home.dc.html">← Shaivya Shashwat</a>
+  <div style="display:flex;gap:24px;align-items:center">
+    <span style="color:rgba(20,20,20,.5)">Case Study 05</span>
+    <span style="color:#B4451F">Arnifi Design System</span>
+  </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<div style="padding:72px 40px 56px;border-bottom:1px solid #141414">
+  <div style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#B4451F;margin-bottom:20px;animation:riseIn .6s cubic-bezier(.22,1,.36,1) .05s both">Design System · Arnifi, Dubai · 2024–25</div>
+  <h1 class="r-case-title" style="margin:0;font:900 92px/0.98 'Archivo',sans-serif;letter-spacing:-.035em;text-transform:uppercase;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .18s both">The grammar,<br>not the screens.</h1>
+  <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:44px;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .32s both">
+    <div style="font:400 18px/1.55 'Archivo',sans-serif;color:rgba(20,20,20,.78);text-wrap:pretty;grid-column:span 2">Design-to-dev friction cut significantly and off-system colours eliminated from production. I built the entire system solo: five colour families, 624 tokens, a full icon library, and a component set diverse enough that designers never have to leave it. Everything on this page is rendered live from the system's exact values.</div>
+    <div style="font:400 13px/1.9 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">Role, Product Designer<br>Team, Arnifi<br>Scope, 622 icons · 1,187 component sets · 624 tokens<br>Tools, Figma</div>
+  </div>
+  <!-- Scale strip -->
+  <div class="r-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;border:1px solid #141414;margin-top:52px">
+    <div style="padding:28px 32px;border-right:1px solid #141414"><div style="font:900 44px 'Archivo',sans-serif;letter-spacing:-.02em">1,187</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);text-transform:uppercase;letter-spacing:.06em;margin-top:6px">Component sets</div></div>
+    <div style="padding:28px 32px;border-right:1px solid #141414"><div style="font:900 44px 'Archivo',sans-serif;letter-spacing:-.02em">622</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);text-transform:uppercase;letter-spacing:.06em;margin-top:6px">Icons, 6 styles × 5 sizes</div></div>
+    <div style="padding:28px 32px;border-right:1px solid #141414"><div style="font:900 44px 'Archivo',sans-serif;letter-spacing:-.02em">624</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);text-transform:uppercase;letter-spacing:.06em;margin-top:6px">Design tokens</div></div>
+    <div style="padding:28px 32px"><div style="font:900 44px 'Archivo',sans-serif;letter-spacing:-.02em">40%</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);text-transform:uppercase;letter-spacing:.06em;margin-top:6px">Less dev friction</div></div>
+  </div>
+</div>
+
+<!-- ===== 01 The situation ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414">
+  <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">01 / The situation</div>
+  <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px;max-width:860px">
+    <div style="font:600 30px/1.3 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">The old system wasn't failing loudly. It was slowing everyone down quietly.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">Arnifi's existing design system was under-scaled for a product that was growing fast. The colour palette had no proper hue and saturation progression, so when designers needed a shade that actually worked, they stepped outside the system to find one. Developers then received designs full of colours with no token equivalent. Every handoff became a negotiation.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">The diagnosis: the system was too small for how the team actually worked. The fix wasn't discipline, it was capacity.</div>
+  </div>
+</div>
+
+<!-- ===== 02 The decision ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414;background:#141414;color:#F2F0EA">
+  <div data-reveal="left" style="padding:56px 40px;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">02 / The decision</div>
+  <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px;max-width:860px">
+    <div style="font:600 30px/1.3 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Comprehensive over "good enough", the call I went back and forth on most.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(242,240,234,.75);text-wrap:pretty">The safe move is to ship a lean set of components and grow it later. I made the opposite bet: build every component by hand, with enough variants to cover the states, sizes, and edge cases a designer would realistically reach for, so exploring a design direction never means leaving the library.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(242,240,234,.75);text-wrap:pretty">The accordion alone carries 280 variants; alerts, 576. The payoff came later, in speed nobody had to think about.</div>
+  </div>
+</div>
+
+<!-- ===== 03 Colour system ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">03 / Colour</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Five families, real hue and saturation progression.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Arnique anchors the brand, a signature blend of "Arnifi + Unique". Tang signals caution. Dusk and Dawn carry the surfaces. A semantic set of True Blue, Moss Green, Ruby, Plum, and Tang gives every state a name that resolves to a token step.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">With 10–12 steps per family, designers stopped needing colours that don't exist, and every colour a dev receives has a token name. That's the fix.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:36px">
+      <!-- Arnique ramp -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 15px 'Inter',sans-serif">Arnique</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5)">brand · interactive · 10 steps</span></div>
+        <div class="r-scale10" style="display:grid;grid-template-columns:repeat(10,1fr);border:1px solid #141414;overflow:hidden">
+          <div style="height:80px;background:#F5F5FF"></div>
+          <div style="height:80px;background:#EBEBFF"></div>
+          <div style="height:80px;background:#D6D6FF"></div>
+          <div style="height:80px;background:#C2C2FF"></div>
+          <div style="height:80px;background:#9999FF"></div>
+          <div style="height:80px;background:#7070FF"></div>
+          <div style="height:80px;background:#3939CC"></div>
+          <div style="height:80px;background:#2E2EA3"></div>
+          <div style="height:80px;background:#171752"></div>
+          <div style="height:80px;background:#0C0048"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5)"><span>arnique-100 · #F5F5FF</span><span>arnique-1000 · #0C0048</span></div>
+      </div>
+      <!-- Dusk + Dawn -->
+      <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 15px 'Inter',sans-serif">Dusk</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5)">cool surfaces · 12 steps</span></div>
+          <div class="r-colorgrid" style="display:grid;grid-template-columns:repeat(6,1fr);border:1px solid #141414;overflow:hidden">
+            <div style="height:60px;background:#FFFFFF"></div>
+            <div style="height:60px;background:#F2F4F8"></div>
+            <div style="height:60px;background:#DDE1E6"></div>
+            <div style="height:60px;background:#C1C7CD"></div>
+            <div style="height:60px;background:#697077"></div>
+            <div style="height:60px;background:#343A3F"></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 15px 'Inter',sans-serif">Dawn</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5)">warm surfaces · 12 steps</span></div>
+          <div class="r-colorgrid" style="display:grid;grid-template-columns:repeat(6,1fr);border:1px solid #141414;overflow:hidden">
+            <div style="height:60px;background:#FFFFFF"></div>
+            <div style="height:60px;background:#F7F3F2"></div>
+            <div style="height:60px;background:#E5E0DF"></div>
+            <div style="height:60px;background:#CAC5C4"></div>
+            <div style="height:60px;background:#ADA8A8"></div>
+            <div style="height:60px;background:#272525"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Semantics -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 15px 'Inter',sans-serif">Semantic set</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5)">every state has a named token</span></div>
+        <div class="r-colorgrid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+          <div style="border:1px solid rgba(20,20,20,.15);overflow:hidden"><div style="height:60px;background:#FA8C16"></div><div style="padding:8px 10px;font:400 10px/1.5 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">Tang<br><span style="color:rgba(20,20,20,.45)">warning</span></div></div>
+          <div style="border:1px solid rgba(20,20,20,.15);overflow:hidden"><div style="height:60px;background:#1677FF"></div><div style="padding:8px 10px;font:400 10px/1.5 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">True Blue<br><span style="color:rgba(20,20,20,.45)">info</span></div></div>
+          <div style="border:1px solid rgba(20,20,20,.15);overflow:hidden"><div style="height:60px;background:#52C41A"></div><div style="padding:8px 10px;font:400 10px/1.5 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">Moss Green<br><span style="color:rgba(20,20,20,.45)">success</span></div></div>
+          <div style="border:1px solid rgba(20,20,20,.15);overflow:hidden"><div style="height:60px;background:#F5222D"></div><div style="padding:8px 10px;font:400 10px/1.5 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">Ruby<br><span style="color:rgba(20,20,20,.45)">error</span></div></div>
+          <div style="border:1px solid rgba(20,20,20,.15);overflow:hidden"><div style="height:60px;background:#51258F"></div><div style="padding:8px 10px;font:400 10px/1.5 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">Plum<br><span style="color:rgba(20,20,20,.45)">undefined</span></div></div>
+          <div style="border:1px solid rgba(20,20,20,.15);overflow:hidden"><div style="height:60px;background:#FFC53D"></div><div style="padding:8px 10px;font:400 10px/1.5 'IBM Plex Mono',monospace;color:rgba(20,20,20,.7)">Gold<br><span style="color:rgba(20,20,20,.45)">caution</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 04 Text tokens ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">04 / Text tokens</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Every text colour has a role, not just a hex.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Primary, Blues, Cools, and Warms, four groups covering every surface context. $text-heading resolves to arnique-1000 on light surfaces. $text-link to true-blue-700. Developers never pick a colour, they pick a role.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px">
+      <!-- Primary tokens -->
+      <div style="border:1px solid #141414;background:#FFFFFF;overflow:hidden">
+        <div style="padding:16px 24px;border-bottom:1px solid rgba(20,20,20,.1);font:600 13px 'Inter',sans-serif;background:#F2F4F8">Primary text tokens</div>
+        <div class="r-table" style="display:grid;grid-template-columns:180px 1fr 140px 120px;padding:0">
+          <div style="padding:12px 16px;font:500 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);border-bottom:1px solid rgba(20,20,20,.07)">Token</div>
+          <div style="padding:12px 16px;font:500 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);border-bottom:1px solid rgba(20,20,20,.07)">Role</div>
+          <div style="padding:12px 16px;font:500 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);border-bottom:1px solid rgba(20,20,20,.07)">Value</div>
+          <div style="padding:12px 16px;font:500 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.5);border-bottom:1px solid rgba(20,20,20,.07)">Example</div>
+          <div style="padding:10px 16px;font:400 12px 'IBM Plex Mono',monospace;background:#EEF0F3;border-radius:3px;margin:6px 8px;align-self:center">$text-default</div>
+          <div style="padding:10px 16px;font:400 13px 'Inter',sans-serif;color:rgba(20,20,20,.7)">Body copy · headers · selected text</div>
+          <div style="padding:10px 16px;font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">dusk-1000<br>#21272A</div>
+          <div style="padding:10px 16px;font:500 14px 'Inter',sans-serif;color:#21272A">Example Text</div>
+          <div style="padding:10px 16px;font:400 12px 'IBM Plex Mono',monospace;background:#EEF0F3;border-radius:3px;margin:6px 8px;align-self:center">$text-heading</div>
+          <div style="padding:10px 16px;font:400 13px 'Inter',sans-serif;color:rgba(20,20,20,.7)">Secondary heading · brand color</div>
+          <div style="padding:10px 16px;font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">arnique-1000<br>#16167A</div>
+          <div style="padding:10px 16px;font:500 14px 'Inter',sans-serif;color:#16167A">Example Text</div>
+          <div style="padding:10px 16px;font:400 12px 'IBM Plex Mono',monospace;background:#EEF0F3;border-radius:3px;margin:6px 8px;align-self:center">$text-link</div>
+          <div style="padding:10px 16px;font:400 13px 'Inter',sans-serif;color:rgba(20,20,20,.7)">Primary links</div>
+          <div style="padding:10px 16px;font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">true-blue-700<br>#0958D9</div>
+          <div style="padding:10px 16px;font:500 14px 'Inter',sans-serif;color:#0958D9;text-decoration:underline">Example Text</div>
+          <div style="padding:10px 16px;font:400 12px 'IBM Plex Mono',monospace;background:#EEF0F3;border-radius:3px;margin:6px 8px;align-self:center">$text-disabled</div>
+          <div style="padding:10px 16px;font:400 13px 'Inter',sans-serif;color:rgba(20,20,20,.7)">Disabled text · labels</div>
+          <div style="padding:10px 16px;font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">dusk-400<br>#C1C7CD</div>
+          <div style="padding:10px 16px;font:500 14px 'Inter',sans-serif;color:#C1C7CD">Example Text</div>
+        </div>
+      </div>
+      <!-- Icon tokens -->
+      <div style="border:1px solid #141414;background:#FFFFFF;overflow:hidden">
+        <div style="padding:16px 24px;border-bottom:1px solid rgba(20,20,20,.1);font:600 13px 'Inter',sans-serif;background:#F2F4F8">Icon colour tokens</div>
+        <div class="r-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+          <div style="padding:16px 24px;border-right:1px solid rgba(20,20,20,.08);border-bottom:1px solid rgba(20,20,20,.08);display:flex;align-items:center;gap:12px"><div style="width:32px;height:32px;border-radius:50%;background:#21272A;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div><div><div style="font:500 12px 'IBM Plex Mono',monospace">$icon-primary</div><div style="font:400 11px 'Inter',sans-serif;color:rgba(20,20,20,.55)">dusk-1000 · #21272A</div></div></div>
+          <div style="padding:16px 24px;border-right:1px solid rgba(20,20,20,.08);border-bottom:1px solid rgba(20,20,20,.08);display:flex;align-items:center;gap:12px"><div style="width:32px;height:32px;border-radius:50%;background:#4D5358;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div><div><div style="font:500 12px 'IBM Plex Mono',monospace">$icon-secondary</div><div style="font:400 11px 'Inter',sans-serif;color:rgba(20,20,20,.55)">dusk-800 · #4D5358</div></div></div>
+          <div style="padding:16px 24px;border-bottom:1px solid rgba(20,20,20,.08);display:flex;align-items:center;gap:12px"><div style="width:32px;height:32px;border-radius:50%;background:#2E2EA3;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div><div><div style="font:500 12px 'IBM Plex Mono',monospace">$icon-active</div><div style="font:400 11px 'Inter',sans-serif;color:rgba(20,20,20,.55)">arnique-900 · #2E2EA3</div></div></div>
+          <div style="padding:16px 24px;border-right:1px solid rgba(20,20,20,.08);display:flex;align-items:center;gap:12px"><div style="width:32px;height:32px;border-radius:50%;background:#FFA940;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2l2 7h7l-6 4 2 7-5-4-5 4 2-7-6-4h7z"/></svg></div><div><div style="font:500 12px 'IBM Plex Mono',monospace">$icon-accent</div><div style="font:400 11px 'Inter',sans-serif;color:rgba(20,20,20,.55)">tang-500 · #FFA940 · caution</div></div></div>
+          <div style="padding:16px 24px;border-right:1px solid rgba(20,20,20,.08);display:flex;align-items:center;gap:12px"><div style="width:32px;height:32px;border-radius:50%;background:#CF1322;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 19h20L12 2zm0 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4V9"/></svg></div><div><div style="font:500 12px 'IBM Plex Mono',monospace">$icon-alert</div><div style="font:400 11px 'Inter',sans-serif;color:rgba(20,20,20,.55)">red-700 · #CF1322 · alert</div></div></div>
+          <div style="padding:16px 24px;display:flex;align-items:center;gap:12px"><div style="width:32px;height:32px;border-radius:50%;background:#52C41A;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M20 6L9 17l-5-5"/></svg></div><div><div style="font:500 12px 'IBM Plex Mono',monospace">$icon-success</div><div style="font:400 11px 'Inter',sans-serif;color:rgba(20,20,20,.55)">moss-green-700 · #52C41A</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 05 Typography ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">05 / Typography</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Inter for the interface. Lora for the voice.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Inter carries the product UI across six weights, from heading scales to body copy to meta labels. Lora provides a serif display scale for marketing moments, campaign headers, and hero sections, a separate grammar for when the product needs to speak rather than function.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Every size, weight, and line-height is a named text style, Lo-D1-500, He-H1-600, Pa-P1-400, so typography decisions compound into a searchable system, not a guessing game.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:28px">
+      <!-- Inter scale -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:36px;display:flex;flex-direction:column;gap:4px">
+        <div style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.4);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em">Inter · UI scale · He-H1 through Pa-P3</div>
+        <div style="font:700 40px/1.2 'Inter',sans-serif;color:#0C0048;letter-spacing:-.01em">H1 · Inter Bold 40 · -1% tracking</div>
+        <div style="font:600 32px/1.25 'Inter',sans-serif;color:#0C0048">H2 · Inter SemiBold 32</div>
+        <div style="font:600 24px/1.3 'Inter',sans-serif;color:#171752">H3 · Inter SemiBold 24</div>
+        <div style="font:600 18px/1.4 'Inter',sans-serif;color:#171752">H4 · Inter SemiBold 18</div>
+        <div style="font:500 16px/1.45 'Inter',sans-serif;color:#2E2EA3">Sub · Inter Medium 16</div>
+        <div style="font:400 14px/1.55 'Inter',sans-serif;color:#21272A;margin-top:8px">Body, Inter Regular 14. The workhorse of the product UI, used across forms, tables, modals, and dashboards at every breakpoint.</div>
+        <div style="font:400 12px/1.6 'Inter',sans-serif;color:#697077">Meta · Inter Regular 12 · labels, captions, timestamps</div>
+      </div>
+      <!-- Lora display scale -->
+      <div style="border:1px solid #141414;background:#F5F5FF;padding:36px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(12,0,72,.4);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em">Lora · Display scale · Lo-D1 through Lo-D6 · for marketing, campaigns, hero moments</div>
+        <div style="font:600 80px/1 'Lora',serif;color:#0C0048;letter-spacing:-.02em">Display Large</div>
+        <div style="font:500 56px/1.05 'Lora',serif;color:#0C0048">Display</div>
+        <div style="font:400 40px/1.1 'Lora',serif;color:#171752">Display Medium</div>
+        <div style="font:400 32px/1.15 'Lora',serif;color:#171752;font-style:italic">Display with italic voice</div>
+        <div style="font:400 24px/1.3 'Lora',serif;color:#2E2EA3">Display Small · editorial paragraphs and pull quotes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 06 Spacing, shadows, grid ===== -->
+<div style="border-bottom:1px solid #141414;background:#141414;color:#F2F0EA">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">06 / Spacing, shadows &amp; grid</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Layout rhythm decided once, not per screen.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(242,240,234,.7);text-wrap:pretty">16-step spacing scale from 2px to 200px, every layout decision resolved to a named token. Shadows in three intensities, each in warm, cool, and neutral casts tuned to the surface family. Grid system for 1920px and 1440px breakpoints.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:28px">
+      <!-- Spacing scale -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.5);text-transform:uppercase;letter-spacing:.06em">Spacing-01 to Spacing-16 · 2px to 200px</div>
+        <div style="display:flex;align-items:flex-end;gap:8px;background:#1C1C2E;padding:20px;overflow-x:auto">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:2px;height:2px;background:#9999FF"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">01</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:4px;height:4px;background:#9999FF"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">02</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:8px;height:8px;background:#9999FF"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">03</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:12px;height:12px;background:#9999FF"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">04</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:16px;height:16px;background:#7070FF"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">05</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:24px;height:24px;background:#7070FF"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">06</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:32px;height:32px;background:#3939CC"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">07</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:40px;height:40px;background:#3939CC"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">08</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:48px;height:48px;background:#2E2EA3"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">09</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:64px;height:64px;background:#2E2EA3"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">10</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:96px;height:96px;background:#171752"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">12</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:128px;height:128px;background:#171752"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">14</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:200px;height:200px;background:#0C0048"></div><span style="font:400 9px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.4)">16</span></div>
+        </div>
+      </div>
+      <!-- Shadow ramp -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgba(242,240,234,.5);text-transform:uppercase;letter-spacing:.06em">Shadow ramp · Light / Medium / Heavy · warm cast</div>
+        <div class="r-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <div style="background:#F5F5FF;padding:32px;display:flex;flex-direction:column;align-items:center;gap:14px"><div style="width:56px;height:56px;background:#fff;box-shadow:0px 1px 2px 0px rgb(200,200,224),0px 2px 4px 0px rgba(200,200,224,.2)"></div><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(12,0,72,.6)">shadow-light-01</span></div>
+          <div style="background:#F5F5FF;padding:32px;display:flex;flex-direction:column;align-items:center;gap:14px"><div style="width:56px;height:56px;background:#fff;box-shadow:0px 4px 6px 0px rgba(200,200,224,.4),0px 8px 16px 0px rgba(200,200,224,.2)"></div><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(12,0,72,.6)">shadow-medium-01</span></div>
+          <div style="background:#F5F5FF;padding:32px;display:flex;flex-direction:column;align-items:center;gap:14px"><div style="width:56px;height:56px;background:#fff;box-shadow:0px 8px 12px 0px rgba(200,200,224,.5),0px 16px 32px 0px rgba(200,200,224,.3)"></div><span style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(12,0,72,.6)">shadow-heavy-01</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 07 Buttons ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">07 / Buttons</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">4 types, 5 sizes, every state defined.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Primary, Secondary, Tertiary, and Link, each with XS, S, M, L, XL sizes and full state coverage: default, hover, active, focused, disabled. Every colour resolves to an Arnique ramp step. Interactive below.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px">
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:36px;display:flex;flex-direction:column;gap:24px">
+        <!-- Row: types -->
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <button style="font:500 14px 'Inter',sans-serif;background:#0C0048;color:#fff;border:none;border-radius:6px;padding:12px 24px;cursor:pointer;transition:background .2s ease" style-hover="background:#2E2EA3">Primary</button>
+          <button style="font:500 14px 'Inter',sans-serif;background:#EBEBFF;color:#0C0048;border:none;border-radius:6px;padding:12px 24px;cursor:pointer;transition:background .2s ease" style-hover="background:#D6D6FF">Secondary</button>
+          <button style="font:500 14px 'Inter',sans-serif;background:#FFFFFF;color:#0C0048;border:1px solid #DDE1E6;border-radius:6px;padding:11px 24px;cursor:pointer;transition:background .2s ease" style-hover="background:#F2F4F8">Tertiary</button>
+          <button style="font:500 14px 'Inter',sans-serif;background:none;color:#2E2EA3;border:none;padding:12px 8px;cursor:pointer;text-decoration:underline;text-underline-offset:3px" style-hover="color:#0C0048">Link</button>
+          <button style="font:500 14px 'Inter',sans-serif;background:#F2F4F8;color:#C1C7CD;border:none;border-radius:6px;padding:12px 24px;cursor:not-allowed">Disabled</button>
+        </div>
+        <!-- Row: sizes -->
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid rgba(20,20,20,.08);padding-top:20px">
+          <button style="font:500 11px 'Inter',sans-serif;background:#0C0048;color:#fff;border:none;border-radius:4px;padding:6px 14px;cursor:pointer">XS</button>
+          <button style="font:500 12px 'Inter',sans-serif;background:#0C0048;color:#fff;border:none;border-radius:5px;padding:8px 18px;cursor:pointer">Small</button>
+          <button style="font:500 14px 'Inter',sans-serif;background:#0C0048;color:#fff;border:none;border-radius:6px;padding:12px 24px;cursor:pointer">Medium</button>
+          <button style="font:500 15px 'Inter',sans-serif;background:#0C0048;color:#fff;border:none;border-radius:6px;padding:14px 28px;cursor:pointer">Large</button>
+          <button style="font:500 16px 'Inter',sans-serif;background:#0C0048;color:#fff;border:none;border-radius:8px;padding:16px 32px;cursor:pointer">XL</button>
+        </div>
+        <div style="font:400 11px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.4)">$btn-primary-bg → arnique-1000 · hover → arnique-700 · active → arnique-800</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 08 Alerts, Badges, Chips ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">08 / Alerts, badges &amp; chips</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">576 alert variants. Every semantic state, every combination.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Alerts cover 3 text sizes × 2 types × 2 categories × 6 states × 2 leading icon options × 2 closing icon options. Badges in 23 variants. Chips with full selected/hover/disabled states tokenised to the Arnique ramp.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:20px">
+      <!-- Alerts -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Alerts · 4 of 576 variants</div>
+        <div style="display:flex;gap:10px;align-items:flex-start;background:#F6FFED;border:1px solid #389E0D;border-radius:6px;padding:12px 14px"><span style="width:20px;height:20px;border-radius:50%;background:#52C41A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 11px 'Inter',sans-serif;flex-shrink:0">✓</span><span style="font:400 13px/1.5 'Inter',sans-serif;color:#135200">Company registration completed successfully.</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;background:#FFF7E6;border:1px solid #FFA940;border-radius:6px;padding:12px 14px"><span style="width:20px;height:20px;border-radius:50%;background:#FA8C16;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 11px 'Inter',sans-serif;flex-shrink:0">!</span><span style="font:400 13px/1.5 'Inter',sans-serif;color:#612500">Visa documents expire in 14 days. Renew now.</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;background:#FFF1F0;border:1px solid #F5222D;border-radius:6px;padding:12px 14px"><span style="width:20px;height:20px;border-radius:50%;background:#F5222D;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 11px 'Inter',sans-serif;flex-shrink:0">✕</span><span style="font:400 13px/1.5 'Inter',sans-serif;color:#820014">Unable to process payment. Check your details.</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;background:#BAE0FF;border:1px solid #1677FF;border-radius:6px;padding:12px 14px"><span style="width:20px;height:20px;border-radius:50%;background:#1677FF;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 11px 'Inter',sans-serif;flex-shrink:0">i</span><span style="font:400 13px/1.5 'Inter',sans-serif;color:#003eb3">Your annual report is due next month.</span></div>
+      </div>
+      <!-- Badges -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Badges · 23 variants · simple + dot</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <span style="font:500 12px 'Inter',sans-serif;background:#EBEBFF;color:#0C0048;border-radius:99px;padding:4px 12px">Default</span>
+          <span style="font:500 12px 'Inter',sans-serif;background:#F6FFED;color:#389E0D;border-radius:99px;padding:4px 12px;display:inline-flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#52C41A;display:inline-block"></span>Active</span>
+          <span style="font:500 12px 'Inter',sans-serif;background:#FFF7E6;color:#D46B08;border-radius:99px;padding:4px 12px;display:inline-flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#FA8C16;display:inline-block"></span>Pending</span>
+          <span style="font:500 12px 'Inter',sans-serif;background:#FFF1F0;color:#CF1322;border-radius:99px;padding:4px 12px;display:inline-flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#F5222D;display:inline-block"></span>Failed</span>
+          <span style="font:500 12px 'Inter',sans-serif;background:#BAE0FF;color:#0958D9;border-radius:99px;padding:4px 12px">Info</span>
+          <span style="font:500 12px 'Inter',sans-serif;background:#F2F4F8;color:#697077;border-radius:99px;padding:4px 12px">Closed</span>
+        </div>
+      </div>
+      <!-- Chips -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Chips · $chips-default → ash gray · selected → arnique-900</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <span style="font:500 13px 'Inter',sans-serif;background:#FFFFFF;color:#21272A;border:1px solid #DDE1E6;border-radius:99px;padding:8px 18px;cursor:pointer">All companies</span>
+          <span style="font:500 13px 'Inter',sans-serif;background:#2E2EA3;color:#fff;border:1px solid #2E2EA3;border-radius:99px;padding:8px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px">UAE <span style="font:400 14px sans-serif">×</span></span>
+          <span style="font:500 13px 'Inter',sans-serif;background:#FFFFFF;color:#21272A;border:1px solid #DDE1E6;border-radius:99px;padding:8px 18px;cursor:pointer">Freezone</span>
+          <span style="font:500 13px 'Inter',sans-serif;background:#F4F4F4;color:#C1C7CD;border:1px solid #DDE1E6;border-radius:99px;padding:8px 18px;cursor:not-allowed">Disabled</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 09 Avatars, Progress, Accordion ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">09 / Avatars, progress &amp; accordion</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">225 avatar variants. 280 accordion variants. Every edge case covered.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Avatars in 3 shapes × 5 sizes × 3 styles × 5 status states. Progress bars in filled, outline, and labelled variants. The accordion expands across 3 categories × 5 sizes × 8 states, with and without icons, helper text, and a tight/loose category.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px">
+      <!-- Avatars -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:16px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Avatars · 225 variants · circle, square, rounded</div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span style="width:52px;height:52px;border-radius:50%;background:#0C0048;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:600 15px 'Inter',sans-serif">SS</span>
+          <span style="width:52px;height:52px;border-radius:8px;background:#EBEBFF;color:#0C0048;display:inline-flex;align-items:center;justify-content:center;font:600 15px 'Inter',sans-serif">AR</span>
+          <span style="position:relative;width:52px;height:52px;border-radius:50%;background:#C2C2FF;color:#0C0048;display:inline-flex;align-items:center;justify-content:center;font:600 15px 'Inter',sans-serif">DV<span style="position:absolute;right:1px;bottom:1px;width:13px;height:13px;border-radius:50%;background:#52C41A;border:2px solid #fff"></span></span>
+          <span style="position:relative;width:52px;height:52px;border-radius:50%;background:#EEF0F3;color:#697077;display:inline-flex;align-items:center;justify-content:center;font:600 15px 'Inter',sans-serif">MK<span style="position:absolute;right:1px;bottom:1px;width:13px;height:13px;border-radius:50%;background:#FA8C16;border:2px solid #fff"></span></span>
+          <span style="position:relative;width:52px;height:52px;border-radius:12px;background:#0C0048;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:600 15px 'Inter',sans-serif">JB<span style="position:absolute;right:-2px;bottom:-2px;width:13px;height:13px;border-radius:50%;background:#F5222D;border:2px solid #fff"></span></span>
+          <span style="width:36px;height:36px;border-radius:50%;background:#EBEBFF;color:#0C0048;display:inline-flex;align-items:center;justify-content:center;font:600 12px 'Inter',sans-serif">S</span>
+          <span style="width:28px;height:28px;border-radius:50%;background:#EEF0F3;color:#697077;display:inline-flex;align-items:center;justify-content:center;font:600 10px 'Inter',sans-serif">XS</span>
+        </div>
+      </div>
+      <!-- Progress -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:14px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Progress bars</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:12px"><div style="flex:1;height:8px;background:#EBEBFF;border-radius:99px;overflow:hidden"><div style="width:72%;height:100%;background:#0C0048;border-radius:99px"></div></div><span style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);flex-shrink:0">72%</span></div>
+          <div style="display:flex;align-items:center;gap:12px"><div style="flex:1;height:8px;background:#F6FFED;border-radius:99px;overflow:hidden"><div style="width:100%;height:100%;background:#52C41A;border-radius:99px"></div></div><span style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);flex-shrink:0">Complete</span></div>
+          <div style="display:flex;align-items:center;gap:12px"><div style="flex:1;height:8px;background:#FFF7E6;border-radius:99px;overflow:hidden"><div style="width:38%;height:100%;background:#FA8C16;border-radius:99px"></div></div><span style="font:400 12px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55);flex-shrink:0">38%</span></div>
+        </div>
+      </div>
+      <!-- Accordion live -->
+      <div style="border:1px solid #141414;background:#FFFFFF;overflow:hidden">
+        <div style="padding:16px 24px;border-bottom:1px solid rgba(20,20,20,.1);font:600 13px 'Inter',sans-serif;background:#F2F4F8">Accordion · 280 variants · 3 sizes shown</div>
+        <div style="border-bottom:1px solid rgba(20,20,20,.1)">
+          <div onClick="{{ toggleAcc0 }}" style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;cursor:pointer;font:500 14px 'Inter',sans-serif;color:#0C0048" style-hover="background:#F7F7FD">
+            <span>How do I set up a company in the UAE?</span>
+            <span style="font:500 18px 'Inter',sans-serif;color:#0C0048;transition:transform .3s ease;transform:{{ acc0rot }}">{{ acc0icon }}</span>
+          </div>
+          <div style="display:grid;grid-template-rows:{{ acc0rows }};transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1)"><div style="overflow:hidden"><div style="padding:0 24px 18px;font:400 14px/1.6 'Inter',sans-serif;color:#697077">Our guided onboarding walks you through jurisdiction selection, document upload, and payment, most setups complete within 3–5 business days.</div></div></div>
+        </div>
+        <div style="border-bottom:1px solid rgba(20,20,20,.1)">
+          <div onClick="{{ toggleAcc1 }}" style="display:flex;justify-content:space-between;align-items:center;padding:14px 24px;cursor:pointer;font:500 13px 'Inter',sans-serif;color:#0C0048" style-hover="background:#F7F7FD">
+            <span>What documents do I need to get started?</span>
+            <span style="font:500 18px 'Inter',sans-serif;color:#0C0048;transition:transform .3s ease;transform:{{ acc1rot }}">{{ acc1icon }}</span>
+          </div>
+          <div style="display:grid;grid-template-rows:{{ acc1rows }};transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1)"><div style="overflow:hidden"><div style="padding:0 24px 14px;font:400 13px/1.6 'Inter',sans-serif;color:#697077">Passport copy, proof of address, and your business plan summary. Additional documents may be required depending on jurisdiction and business activity.</div></div></div>
+        </div>
+        <div>
+          <div onClick="{{ toggleAcc2 }}" style="display:flex;justify-content:space-between;align-items:center;padding:10px 24px;cursor:pointer;font:500 12px 'Inter',sans-serif;color:#0C0048" style-hover="background:#F7F7FD">
+            <span>Can I manage multiple companies in one account?</span>
+            <span style="font:500 16px 'Inter',sans-serif;color:#0C0048;transition:transform .3s ease;transform:{{ acc2rot }}">{{ acc2icon }}</span>
+          </div>
+          <div style="display:grid;grid-template-rows:{{ acc2rows }};transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1)"><div style="overflow:hidden"><div style="padding:0 24px 10px;font:400 12px/1.6 'Inter',sans-serif;color:#697077">Yes. The dashboard aggregates all your entities with individual status tracking, document management, and renewal reminders.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 10 Breadcrumbs, Pagination, Text inputs ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">10 / Breadcrumbs, pagination &amp; inputs</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Navigation and data-entry components, fully specified.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Breadcrumbs in large/medium/small with icon variants and overflow handling. Pagination as button pairs, number bars, and table bars. Text inputs, text areas, dropdowns, and date pickers, all state-complete, all tokenised.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:20px">
+      <!-- Breadcrumbs -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Breadcrumbs</div>
+        <div style="display:flex;align-items:center;gap:6px;font:400 14px 'Inter',sans-serif;color:#0958D9">
+          <span>Home</span><span style="color:#C1C7CD">›</span><span>Companies</span><span style="color:#C1C7CD">›</span><span>…</span><span style="color:#C1C7CD">›</span><span style="color:#21272A;font-weight:500">Current Page</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font:400 13px 'Inter',sans-serif;color:#0958D9">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0C0048" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span style="color:#21272A">Home</span><span style="color:#C1C7CD">›</span><span>Item 1</span><span style="color:#C1C7CD">›</span><span>Item 2</span>
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Pagination · nav bar + table bar</div>
+        <div style="display:flex;align-items:center;gap:4px">
+          <button style="font:400 14px 'Inter',sans-serif;border:1px solid #DDE1E6;background:#fff;color:#21272A;padding:8px 14px;cursor:pointer">‹</button>
+          <button style="font:600 14px 'Inter',sans-serif;border:1px solid #0C0048;background:#0C0048;color:#fff;padding:8px 14px;cursor:pointer">1</button>
+          <button style="font:400 14px 'Inter',sans-serif;border:1px solid #DDE1E6;background:#fff;color:#21272A;padding:8px 14px;cursor:pointer">2</button>
+          <button style="font:400 14px 'Inter',sans-serif;border:1px solid #DDE1E6;background:#fff;color:#21272A;padding:8px 14px;cursor:pointer">3</button>
+          <button style="font:400 14px 'Inter',sans-serif;border:1px solid #DDE1E6;background:rgba(12,0,72,.06);color:#21272A;padding:8px 14px;cursor:pointer">4</button>
+          <span style="font:400 14px 'Inter',sans-serif;color:#C1C7CD;padding:8px 8px">…</span>
+          <button style="font:400 14px 'Inter',sans-serif;border:1px solid #DDE1E6;background:#fff;color:#21272A;padding:8px 14px;cursor:pointer">10</button>
+          <button style="font:400 14px 'Inter',sans-serif;border:1px solid #DDE1E6;background:#fff;color:#21272A;padding:8px 14px;cursor:pointer">›</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;border:1px solid #DDE1E6;padding:10px 16px;font:400 13px 'Inter',sans-serif;color:#697077">
+          <span>Items on this page:</span>
+          <input value="100" style="width:56px;border:1px solid #DDE1E6;border-radius:4px;padding:4px 8px;font:500 13px 'Inter',sans-serif;text-align:center">
+          <span>1–100 of 100 items</span>
+          <span style="margin-left:auto">Page 1 of 10</span>
+          <button style="border:1px solid #DDE1E6;background:#fff;padding:6px 10px;cursor:pointer">‹</button>
+          <button style="border:1px solid #DDE1E6;background:#fff;padding:6px 10px;cursor:pointer">›</button>
+        </div>
+      </div>
+      <!-- Text inputs -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Text inputs · default / focused / error states</div>
+        <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <label style="font:500 12px 'Inter',sans-serif;color:#21272A">Company name</label>
+            <input placeholder="Acme Inc." style="border:1px solid #DDE1E6;border-radius:6px;padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;outline:none">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <label style="font:500 12px 'Inter',sans-serif;color:#21272A">Email</label>
+            <input value="hello@arnifi.com" style="border:2px solid #0C0048;border-radius:6px;padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;outline:none">
+            <span style="font:400 11px 'Inter',sans-serif;color:#697077">Focused state</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <label style="font:500 12px 'Inter',sans-serif;color:#CF1322">Trade licence number</label>
+            <input value="TL-20039" style="border:1px solid #F5222D;border-radius:6px;padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;outline:none">
+            <span style="font:400 11px 'Inter',sans-serif;color:#CF1322">Invalid number format</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 11 Dropdown & Date picker ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">11 / Dropdown &amp; date picker</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Selection components, where most systems get lazy.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Dropdowns with hover, selected, and multi-select states. Date and time pickers built from a dedicated item set, day cells with default, hovered, selected, in-range, and disabled states, so booking flows and filters never improvise. Interactive below.</div>
+    </div>
+    <div class="r-2col" style="padding:56px 40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+      <!-- Dropdown live -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Dropdown · open state</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label style="font:500 12px 'Inter',sans-serif;color:#21272A">Jurisdiction</label>
+          <div onClick="{{ toggleDd }}" style="border:2px solid #0C0048;border-radius:6px;padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
+            <span>{{ ddValue }}</span>
+            <span style="color:#697077;font-size:12px;transition:transform .25s ease;transform:{{ ddRot }}">▾</span>
+          </div>
+          <div style="display:grid;grid-template-rows:{{ ddRows }};transition:grid-template-rows .35s cubic-bezier(.22,1,.36,1)"><div style="overflow:hidden">
+            <div style="border:1px solid #DDE1E6;border-radius:6px;margin-top:4px;box-shadow:0px 4px 6px 0px rgba(200,200,224,.4),0px 8px 16px 0px rgba(200,200,224,.2);overflow:hidden">
+              <div onClick="{{ pickDd0 }}" style="padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;cursor:pointer;background:{{ ddBg0 }}" style-hover="background:#F7F7FD">UAE Mainland</div>
+              <div onClick="{{ pickDd1 }}" style="padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;cursor:pointer;background:{{ ddBg1 }}" style-hover="background:#F7F7FD">UAE Freezone</div>
+              <div onClick="{{ pickDd2 }}" style="padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#21272A;cursor:pointer;background:{{ ddBg2 }}" style-hover="background:#F7F7FD">Saudi Arabia</div>
+              <div onClick="{{ pickDd3 }}" style="padding:10px 14px;font:400 14px 'Inter',sans-serif;color:#C1C7CD;cursor:not-allowed">Singapore, coming soon</div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+      <!-- Date picker live -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Date picker · range selection</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font:600 14px 'Inter',sans-serif;color:#0C0048;padding:0 4px">
+          <span style="cursor:pointer;color:#697077">‹</span><span>March 2025</span><span style="cursor:pointer;color:#697077">›</span>
+        </div>
+        <div class="r-scale7" style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;font:500 11px 'Inter',sans-serif;color:#697077;text-align:center">
+          <span style="padding:6px 0">M</span><span style="padding:6px 0">T</span><span style="padding:6px 0">W</span><span style="padding:6px 0">T</span><span style="padding:6px 0">F</span><span style="padding:6px 0">S</span><span style="padding:6px 0">S</span>
+        </div>
+        <div class="r-scale7" style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;font:400 13px 'Inter',sans-serif;color:#21272A;text-align:center">
+          <span style="padding:8px 0;color:#C1C7CD">24</span><span style="padding:8px 0;color:#C1C7CD">25</span><span style="padding:8px 0;color:#C1C7CD">26</span><span style="padding:8px 0;color:#C1C7CD">27</span><span style="padding:8px 0;color:#C1C7CD">28</span><span style="padding:8px 0">1</span><span style="padding:8px 0">2</span>
+          <span style="padding:8px 0">3</span><span style="padding:8px 0">4</span><span style="padding:8px 0">5</span><span style="padding:8px 0">6</span><span style="padding:8px 0">7</span><span style="padding:8px 0">8</span><span style="padding:8px 0">9</span>
+          <span style="padding:8px 0;background:#0C0048;color:#fff;border-radius:6px 0 0 6px">10</span><span style="padding:8px 0;background:#EBEBFF">11</span><span style="padding:8px 0;background:#EBEBFF">12</span><span style="padding:8px 0;background:#EBEBFF">13</span><span style="padding:8px 0;background:#0C0048;color:#fff;border-radius:0 6px 6px 0">14</span><span style="padding:8px 0">15</span><span style="padding:8px 0">16</span>
+          <span style="padding:8px 0">17</span><span style="padding:8px 0;border:1.5px solid #0C0048;border-radius:6px">18</span><span style="padding:8px 0">19</span><span style="padding:8px 0">20</span><span style="padding:8px 0">21</span><span style="padding:8px 0">22</span><span style="padding:8px 0">23</span>
+          <span style="padding:8px 0">24</span><span style="padding:8px 0">25</span><span style="padding:8px 0">26</span><span style="padding:8px 0">27</span><span style="padding:8px 0">28</span><span style="padding:8px 0">29</span><span style="padding:8px 0">30</span>
+        </div>
+        <div style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.4)">selected → arnique-1000 · in-range → arnique-200 · today → outlined</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 12 Borders, dividers & special headings ===== -->
+<div style="border-bottom:1px solid #141414">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">12 / Borders, dividers &amp; special headings</div>
+      <div style="font:600 24px/1.35 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">The structural tokens nobody notices, until they're inconsistent.</div>
+      <div style="font:400 15px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.72);text-wrap:pretty">Border tokens name every stroke by role: default, hover, focused, error, success, warning. Dividers come in solid, dashed, and dotted at 0.5–1px, with optional centre, left, or right labels. Special headings give Inter a display register for stats and section intros.</div>
+    </div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:20px">
+      <!-- Border tokens -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Border tokens · role → ramp step</div>
+        <div class="r-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="height:44px;border:1px solid #DDE1E6;border-radius:6px"></div><span style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">$border-default · dusk-300</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="height:44px;border:1px solid #697077;border-radius:6px"></div><span style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">$border-hover · dusk-500</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="height:44px;border:2px solid #9999FF;border-radius:6px"></div><span style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">$border-focused · arnique-500</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="height:44px;border:1px solid #FF4D4F;border-radius:6px"></div><span style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">$border-error · ruby-500</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="height:44px;border:1px solid #52C41A;border-radius:6px"></div><span style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">$border-success · moss-700</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="height:44px;border:1px solid #FFA940;border-radius:6px"></div><span style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(20,20,20,.55)">$border-warning · tang-500</span></div>
+        </div>
+      </div>
+      <!-- Dividers -->
+      <div style="border:1px solid #141414;background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <div style="font:600 13px 'Inter',sans-serif;color:rgba(20,20,20,.6)">Dividers · solid, dashed, dotted · with label positions</div>
+        <div style="border-top:1px solid #DDE1E6"></div>
+        <div style="border-top:1px dashed #C1C7CD"></div>
+        <div style="border-top:1px dotted #C1C7CD"></div>
+        <div style="display:flex;align-items:center;gap:14px"><div style="flex:1;border-top:1px solid #DDE1E6"></div><span style="font:500 12px 'Inter',sans-serif;color:#697077">Centre label</span><div style="flex:1;border-top:1px solid #DDE1E6"></div></div>
+        <div style="display:flex;align-items:center;gap:14px"><span style="font:500 12px 'Inter',sans-serif;color:#697077">Left label</span><div style="flex:1;border-top:1px solid #DDE1E6"></div></div>
+      </div>
+      <!-- Special headings -->
+      <div style="border:1px solid #141414;background:#F5F5FF;padding:32px;display:flex;flex-direction:column;gap:6px">
+        <div style="font:400 10px 'IBM Plex Mono',monospace;color:rgba(12,0,72,.4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Special Headings · Inter · display register</div>
+        <div style="font:700 40px/1.1 'Inter',sans-serif;color:#0C0048;letter-spacing:-.015em">In-S1 · Inter Bold 40</div>
+        <div style="font:700 35px/1.15 'Inter',sans-serif;color:#0C0048;letter-spacing:-.01em">In-S2 · Inter Bold 35</div>
+        <div style="font:600 20px/1.3 'Inter',sans-serif;color:#171752">In-S3 · Inter SemiBold 20 · stat labels and section intros</div>
+        <div style="font:500 18px/1.4 'Inter',sans-serif;color:#2E2EA3">In-S4 · Inter Medium 18 · supporting display text</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 13 Validation ===== -->
+<div class="r-2col" style="display:grid;grid-template-columns:380px 1fr;border-bottom:1px solid #141414">
+  <div data-reveal="left" style="padding:56px 40px;border-right:1px solid #141414;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)">13 / Validation</div>
+  <div style="padding:56px 40px;display:flex;flex-direction:column;gap:24px;max-width:860px">
+    <div style="font:600 30px/1.3 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Tested in real work, not a review meeting.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">Instead of presenting the library for feedback, I put it into active use: fellow designers explored live design directions using only the components, and the library went to developers implementing real features. First versions exposed gaps that only usage finds. Variants were reworked, definitions tightened, and the library grew where real work demanded it.</div>
+    <div style="font:400 17px/1.65 'Archivo',sans-serif;color:rgba(20,20,20,.75);text-wrap:pretty">The strongest validation was unplanned: the system spread beyond the product. Ad creatives, campaign banners, and marketing videos all started pulling from the same tokens and components, one visual language across every surface Arnifi shipped.</div>
+  </div>
+</div>
+
+<!-- ===== 14 Impact ===== -->
+<div style="border-bottom:1px solid #141414;background:#141414;color:#F2F0EA">
+  <div class="r-2col" style="display:grid;grid-template-columns:380px 1fr">
+    <div data-reveal="left" style="padding:56px 40px;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,240,234,.5)">14 / Impact</div>
+    <div style="padding:56px 40px;display:flex;flex-direction:column;gap:32px;max-width:900px">
+      <div style="font:600 30px/1.3 'Archivo',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Faster exploration. Cleaner handoffs. One language for everything.</div>
+      <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border:1px solid rgba(242,240,234,.3)">
+        <div style="padding:32px;border-right:1px solid rgba(242,240,234,.3)">
+          <div style="font:900 52px 'Archivo',sans-serif;color:#E8A07A">40%</div>
+          <div style="font:400 13px/1.6 'Archivo',sans-serif;color:rgba(242,240,234,.7);margin-top:10px">less design-to-dev friction: every colour, spacing, and state resolves to a named token</div>
+        </div>
+        <div style="padding:32px;border-right:1px solid rgba(242,240,234,.3)">
+          <div style="font:900 52px 'Archivo',sans-serif;color:#E8A07A">Faster</div>
+          <div style="font:400 13px/1.6 'Archivo',sans-serif;color:rgba(242,240,234,.7);margin-top:10px">design exploration: directions tested inside the library instead of built from scratch each time</div>
+        </div>
+        <div style="padding:32px">
+          <div style="font:900 52px 'Archivo',sans-serif;color:#E8A07A">1</div>
+          <div style="font:400 13px/1.6 'Archivo',sans-serif;color:rgba(242,240,234,.7);margin-top:10px">visual language across product UI, ads, banners, campaigns, and video</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer nav ===== -->
+<div style="padding:64px 40px;background:#B4451F;color:#F2F0EA;display:flex;justify-content:space-between;align-items:center">
+  <a href="Shaivya Portfolio - Home.dc.html" style="font:500 13px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em">← All work</a>
+  <a href="Arnifi Motion - Case Study.dc.html" style="font:900 44px 'Archivo',sans-serif;letter-spacing:-.02em;text-transform:uppercase;display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateX(10px);opacity:1">Next, Arnifi Motion →</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { acc: [true, false, false], ddOpen: true, ddSel: 1 };
+
+  ddOptions = ['UAE Mainland', 'UAE Freezone', 'Saudi Arabia'];
+
+  toggle(i) {
+    this.setState(s => {
+      const acc = s.acc.slice();
+      acc[i] = !acc[i];
+      return { acc };
+    });
+  }
+
+  renderVals() {
+    const { acc, ddOpen, ddSel } = this.state;
+    const vals = {
+      toggleDd: () => this.setState({ ddOpen: !ddOpen }),
+      ddRows: ddOpen ? '1fr' : '0fr',
+      ddRot: ddOpen ? 'rotate(180deg)' : 'none',
+      ddValue: this.ddOptions[ddSel],
+    };
+    for (let i = 0; i < 3; i++) {
+      vals['acc' + i + 'rows'] = acc[i] ? '1fr' : '0fr';
+      vals['acc' + i + 'icon'] = acc[i] ? '−' : '+';
+      vals['acc' + i + 'rot'] = acc[i] ? 'rotate(45deg)' : 'none';
+      vals['toggleAcc' + i] = () => this.toggle(i);
+      vals['ddBg' + i] = i === ddSel ? '#EBEBFF' : '#FFFFFF';
+      vals['pickDd' + i] = () => this.setState({ ddSel: i, ddOpen: false });
+    }
+    vals['ddBg3'] = '#FFFFFF';
+    vals['pickDd3'] = () => {};
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

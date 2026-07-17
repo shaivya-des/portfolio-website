@@ -1,0 +1,90 @@
+/* ============================================================
+   Responsive layer — Shaivya Shashwat portfolio
+   Desktop (>= ~1100px) is intentionally UNTOUCHED. Every rule
+   below lives inside a max-width media query, so the desktop
+   layout stays pixel-identical. Overrides use !important only
+   to win over the inline styles the pages are authored with.
+   ============================================================ */
+
+/* Never allow sideways scroll on smaller viewports */
+@media (max-width: 1099px) {
+  html, body { overflow-x: hidden; }
+  .r-page { min-width: 0 !important; }
+  img, video { max-width: 100%; }
+}
+
+/* ---- Fluid large type (stops big headings overflowing) ---- */
+@media (max-width: 1024px) {
+  .r-hero-title  { font-size: clamp(48px, 11vw, 132px) !important; }
+  .r-case-title  { font-size: clamp(40px, 10vw, 96px) !important; }
+  .r-footer-title{ font-size: clamp(32px, 8vw, 96px) !important; }
+  .r-row-title   { font-size: clamp(26px, 6vw, 42px) !important; }
+  .r-sect-title  { font-size: clamp(30px, 6vw, 40px) !important; }
+}
+
+/* ---- Two-column blocks collapse to one ---- */
+@media (max-width: 900px) {
+  .r-hero-sub,
+  .r-2col,
+  .r-panel,
+  .r-screens,
+  .r-films,
+  .r-films-alt { grid-template-columns: 1fr !important; }
+
+  /* drop the vertical divider that separated the two columns */
+  .r-2col > *:first-child { border-right: none !important; border-bottom: 1px solid rgba(20,20,20,.18) !important; }
+  .r-2col-dark > *:first-child { border-right: none !important; border-bottom: 1px solid rgba(242,240,234,.14) !important; }
+
+  .r-avail       { flex-direction: column; align-items: flex-start !important; }
+  .r-footer-row  { flex-wrap: wrap; gap: 14px; }
+
+  /* film rows: keep media above copy when stacked */
+  .r-films-alt   { direction: ltr; }
+}
+
+/* ---- Card grids ---- */
+@media (max-width: 900px) {
+  .r-meta  { grid-template-columns: repeat(2, 1fr) !important; }
+  .r-stats { grid-template-columns: repeat(2, 1fr) !important; }
+  .r-colorgrid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .r-meta, .r-stats { grid-template-columns: 1fr !important; }
+  .r-colorgrid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ---- Top navigation: swap desktop grid for mobile bar ---- */
+.r-mobilebar { display: none; }
+@media (max-width: 860px) {
+  .r-nav { display: none !important; }
+  .r-mobilebar { display: flex !important; }
+}
+
+/* ---- Work index rows become stacked cards ---- */
+@media (max-width: 760px) {
+  .r-work-head { display: none !important; }
+  .r-row {
+    grid-template-columns: 1fr auto !important;
+    row-gap: 4px !important;
+    padding: 20px !important;
+    align-items: start !important;
+  }
+  .r-row > * { grid-column: 1; }
+  .r-row .r-chev { grid-column: 2; grid-row: 1; align-self: center; }
+}
+
+/* ---- Reduce section side padding on the smallest screens ---- */
+@media (max-width: 480px) {
+  .r-pad { padding-left: 22px !important; padding-right: 22px !important; }
+}
+
+/* ---- Wide token/scale strips & table rows ---- */
+@media (max-width: 900px) {
+  .r-scale10 { grid-template-columns: repeat(5, 1fr) !important; }
+  .r-scale7  { grid-template-columns: repeat(4, 1fr) !important; }
+  .r-table   { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  .r-scale10 { grid-template-columns: repeat(3, 1fr) !important; }
+  .r-scale7  { grid-template-columns: repeat(2, 1fr) !important; }
+}
