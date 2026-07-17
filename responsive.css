@@ -78,6 +78,15 @@
   .r-pad { padding-left: 22px !important; padding-right: 22px !important; }
 }
 
+/* ---- Case study mobile hamburger (CSS :checked) ---- */
+.cs-hamburger { display: none; }
+.cs-overlay   { display: none; }
+@media (max-width: 860px) {
+  .cs-nav-right  { display: none !important; }
+  .cs-hamburger  { display: flex !important; }
+  #cs-menu-toggle:checked ~ .cs-overlay { display: flex !important; }
+}
+
 /* ---- Wide token/scale strips & table rows ---- */
 @media (max-width: 900px) {
   .r-scale10 { grid-template-columns: repeat(5, 1fr) !important; }

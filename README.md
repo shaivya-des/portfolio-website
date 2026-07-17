@@ -1,64 +1,50 @@
 # Shaivya Shashwat — Portfolio
 
-The exact site rendered in the Design Preview — the real HTML pages, animations,
-images, GIFs, and videos. Nothing is reconstructed or simplified.
+A pure static website. The exact site from the Design Preview — real HTML pages,
+animations, images, GIFs, and videos. No build step, no server, no dependencies.
 
-## Run locally
+## Pages
 
-```bash
-npm install      # installs nothing — there are zero dependencies
-npm run dev      # starts a local static server
-```
-
-Open **http://localhost:3000**.
-
-`server.js` is a tiny zero-dependency Node static server used **only** for local
-development. It is not used in deployment.
+| URL | File |
+|-----|------|
+| `/` | `index.html` (home) |
+| `/about.html` | About |
+| `/healos.html` | HealOS case study |
+| `/legalclerk.html` | LegalClerk case study |
+| `/openmic.html` | OpenMic case study |
+| `/salesroleplay.html` | SalesRoleplay case study |
+| `/arnifi-motion.html` | Arnifi Motion case study |
+| `/arnifi-design-system.html` | Arnifi Design System case study |
 
 ## Deploy to Vercel
 
-This is a **pure static site** — it targets Vercel's static file hosting (CDN).
-There is **no Node server and no serverless function** in production; Vercel just
-serves the files directly. `server.js` is ignored on Vercel.
+This is a static site — Vercel serves the files straight from its CDN. There is
+**no server and no build**.
 
-`vercel.json` pins this behaviour:
+1. Push this folder to a GitHub repo.
+2. Import it in Vercel. Framework Preset: **Other** (nothing to configure).
+3. Deploy.
 
-```json
-{
-  "framework": null,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "cleanUrls": false,
-  "rewrites": [{ "source": "/", "destination": "/index.html" }]
-}
+Opening `https://your-domain.com/` renders `index.html` immediately — no redirect.
+
+## Preview locally
+
+Any static file server works. The simplest, with Node installed:
+
+```bash
+npx serve .
 ```
 
-- `framework: null` + `buildCommand: null` → Vercel runs no build and does not
-  try to boot `server.js` (that was the cause of the earlier 404s).
-- `outputDirectory: "."` → the project root is published as-is.
-- The rewrite maps `/` to `index.html`, which redirects to the home page.
+…or open the folder with the VS Code "Live Server" extension. (A server is only
+needed so the browser fetches sibling files over http:// rather than file://.)
 
-### Steps
-1. Push this folder to a GitHub repo.
-2. Import it in Vercel. When asked, **Framework Preset: Other** (vercel.json
-   already sets everything).
-3. Deploy. No build step runs; every page, asset, GIF, and MP4 is served from
-   the CDN.
+## Files
 
-## What's inside
+- `index.html` + the seven page files — the site
+- `support.js` — rendering runtime
+- `ui-motion.js` — scroll reveals, hover motion, count-ups
+- `dotted-surface.js` — animated hero background
+- `responsive.css` — responsive layer (desktop unchanged; tablet/mobile rules)
+- `assets/` — all images, GIFs, videos, resume PDF
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Entry — redirects to the home page |
-| `Shaivya Portfolio - Home.dc.html` | Home |
-| `About - Shaivya Shashwat.dc.html` | About |
-| `HealOS / LegalClerk / OpenMic / SalesRoleplay / Arnifi … .dc.html` | Case studies |
-| `support.js` | Rendering runtime |
-| `ui-motion.js` | Scroll reveals, hover motion, count-ups |
-| `dotted-surface.js` | Animated hero background |
-| `responsive.css` | Responsive layer (desktop unchanged; mobile/tablet rules) |
-| `assets/` | All images, GIFs, videos, resume PDF |
-| `server.js` | Local dev server only (not used on Vercel) |
-
-Fonts (Google Fonts) and the 3D library (three.js) load from public CDNs, so keep
-the machine online.
+Fonts (Google Fonts) and three.js load from public CDNs, so stay online.

@@ -17,6 +17,7 @@ a{color:inherit;text-decoration:none}
 a:hover{opacity:.7}
 ::selection{background:#B4451F;color:#F2F0EA}
 @keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 <link rel="stylesheet" href="./responsive.css">
 <script src="./ui-motion.js"></script>
@@ -27,12 +28,40 @@ a:hover{opacity:.7}
 <!-- ===== Top strip ===== -->
 <div style="position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #141414;background:#F2F0EA">
   <a href="Shaivya Portfolio - Home.dc.html">← Shaivya Shashwat</a>
-  <div style="display:flex;gap:24px;align-items:center">
+  <div class="cs-nav-right" style="display:flex;gap:24px;align-items:center">
     <a href="Shaivya Portfolio - Home.dc.html">Work</a>
     <span style="color:{{ accent }}">About</span>
     <a href="assets/resume.pdf" download="Shaivya-Shashwat-Resume.pdf" style="background:#141414;color:#F2F0EA;padding:8px 14px">Resume ↓</a>
   </div>
+
+  <label for="cs-menu-toggle" class="cs-hamburger" aria-label="Open menu" style="display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none">
+    <span style="display:block;width:26px;height:2px;background:#141414"></span>
+    <span style="display:block;width:26px;height:2px;background:#141414"></span>
+    <span style="display:block;width:26px;height:2px;background:#141414"></span>
+  </label>
 </div>
+<input type="checkbox" id="cs-menu-toggle" class="cs-menu-toggle" style="display:none">
+<div class="cs-overlay" style="display:none;position:fixed;inset:0;z-index:120;background:#F2F0EA;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #141414;font:500 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em">
+    <div>Shaivya Shashwat</div>
+    <label for="cs-menu-toggle" style="font:400 28px 'Archivo',sans-serif;cursor:pointer;padding:4px 8px;line-height:1">✕</label>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px 22px">
+    <a href="Shaivya Portfolio - Home.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">Home</a>
+    <a href="About - Shaivya Shashwat.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">About</a>
+    <a href="HealOS - Case Study.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">HealOS</a>
+    <a href="LegalClerk - Case Study.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">LegalClerk</a>
+    <a href="OpenMic - Case Study.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">OpenMic</a>
+    <a href="SalesRoleplay - Case Study.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">SalesRoleplay</a>
+    <a href="Arnifi Design System - Case Study.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">Arnifi DS</a>
+    <a href="Arnifi Motion - Case Study.dc.html" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">Arnifi Motion</a>
+    <a href="mailto:shaivya2003@gmail.com" style="display:block;font:800 36px 'Archivo',sans-serif;letter-spacing:-.02em;color:#141414;padding:6px 0">Contact</a>
+  </div>
+  <div style="border-top:1px solid #141414;overflow:hidden;white-space:nowrap;padding:13px 0">
+    <div style="display:inline-block;animation:marquee 22s linear infinite;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.04em;color:rgba(20,20,20,.6)"><span>Shaivya Shashwat&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Product Designer&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Attack Capital, New York&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Available 2026&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span><span>Shaivya Shashwat&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Product Designer&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Attack Capital, New York&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Available 2026&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span></div>
+  </div>
+</div>
+
 
 <!-- ===== 1 · Hero ===== -->
 <div style="padding:110px 40px 90px;border-bottom:1px solid #141414">
